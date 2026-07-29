@@ -1,0 +1,114 @@
+{
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "build_system": "Python 3.10+ / setuptools; unittest",
+  "entry_points": {
+    "assigned_wrapper": "signal_morph(signal)",
+    "generated_cpp": "ag_signal_morpher_1ee27305a6aa_kernel::kernel(x)",
+    "generated_opencl": "transform_scalar",
+    "generated_python": "kernel(x)",
+    "integration": "biological_neural_network.SpikingNetwork"
+  },
+  "file_count": 15,
+  "files": [
+    {
+      "bytes": 5131,
+      "layer": "metadata",
+      "path": "exports/ag_signal_morpher_1ee27305a6aa_manifest.json",
+      "sha256": "5112b969fb53a3d140d67afa4ea4ca0343cb0ed33b65055f27a5f9969dba1fbe"
+    },
+    {
+      "bytes": 3537,
+      "layer": "metadata",
+      "path": "exports/ag_signal_morpher_1ee27305a6aa_README.md",
+      "sha256": "c7bdfe66776ded419d2b5be857761c1e5f33f2c966adeb1ee3f887e484eaf76c"
+    },
+    {
+      "bytes": 20495,
+      "layer": "assays",
+      "path": "exports/assays/ag_signal_morpher_1ee27305a6aa_assay_platform.py",
+      "sha256": "97e56328d52133090698f318fd90af6b38ccc4d090646c339b632c590ba22d44"
+    },
+    {
+      "bytes": 18847,
+      "layer": "assays",
+      "path": "exports/assays/ag_signal_morpher_1ee27305a6aa_hypothesis.json",
+      "sha256": "6b236844124e735d908642391f759ea561b095829d84d16ce97bb10215f50427"
+    },
+    {
+      "bytes": 6723,
+      "layer": "assays",
+      "path": "exports/assays/ag_signal_morpher_1ee27305a6aa_hypothesis.md",
+      "sha256": "3ffac12444616b8926a991c6bbafad4d0b183bb267157cd900dc6d6a0e092a2e"
+    },
+    {
+      "bytes": 14832,
+      "layer": "assays",
+      "path": "exports/assays/ag_signal_morpher_1ee27305a6aa_morphogenesis.json",
+      "sha256": "eff6eed82990641d9e95e0db1e46f92d07f5c1873da1d6fb4d1459bcf14ad953"
+    },
+    {
+      "bytes": 4925,
+      "layer": "assays",
+      "path": "exports/assays/ag_signal_morpher_1ee27305a6aa_morphogenesis.md",
+      "sha256": "62f630bfa456cb6467525783ff57d0c31c44789ab592029f428edd84aa8800ac"
+    },
+    {
+      "bytes": 3317,
+      "layer": "assays",
+      "path": "exports/assays/test_ag_signal_morpher_1ee27305a6aa_assay_platform.py",
+      "sha256": "ee51299954767d9b620b5aaeb24237ff77fe2d45914778f0590b0b1ff598f976"
+    },
+    {
+      "bytes": 3301,
+      "layer": "generated",
+      "path": "exports/generated/__pycache__/ag_signal_morpher_1ee27305a6aa_kernel.cpython-312.pyc",
+      "sha256": "c12ae7f7eb6646f8cfa08d83d6611c023e7b041f4f848ef56c9b7909c8c84aba"
+    },
+    {
+      "bytes": 883,
+      "layer": "generated",
+      "path": "exports/generated/ag_signal_morpher_1ee27305a6aa_kernel.cl",
+      "sha256": "6d79b3446c33b3f12151ae190413f2b8a64228d6a49e2bc0a4daa8b2e0dce621"
+    },
+    {
+      "bytes": 882,
+      "layer": "generated",
+      "path": "exports/generated/ag_signal_morpher_1ee27305a6aa_kernel.hpp",
+      "sha256": "7f12ef2444727fed1db9099746f860de94591cb863e95b3b6dc2798a904dac70"
+    },
+    {
+      "bytes": 964,
+      "layer": "generated",
+      "path": "exports/generated/ag_signal_morpher_1ee27305a6aa_kernel.py",
+      "sha256": "39e7d85e8efc66d77005d98508c987596582d74da41cee495f8bed8ede297e5b"
+    },
+    {
+      "bytes": 3218,
+      "layer": "wrappers",
+      "path": "exports/wrappers/ag_signal_morpher_1ee27305a6aa_kernels.cl",
+      "sha256": "6414b9eaad523646c59a0778fb32aa6c03f806dfa1eb29925938525f5107e613"
+    },
+    {
+      "bytes": 5796,
+      "layer": "wrappers",
+      "path": "exports/wrappers/ag_signal_morpher_1ee27305a6aa_support.hpp",
+      "sha256": "bb8bbeed59c2904351eb0a875fc467aa7d6e3ee88c4a60ab56430e5cc865b899"
+    },
+    {
+      "bytes": 313,
+      "layer": "wrappers",
+      "path": "exports/wrappers/ag_signal_morpher_1ee27305a6aa_wrapper.py",
+      "sha256": "187a8f76e2fbd89f32cd701b5165f53464b4dc722cd8b857c60f73d664cd5c25"
+    }
+  ],
+  "manifest_consistency": {
+    "all_expected_export_files_present": false,
+    "assigned_wrapper_present": true,
+    "cpp_kernel_present": true,
+    "opencl_kernel_present": true,
+    "python_kernel_present": true
+  },
+  "originals_modified": false,
+  "project_root": "D:\\Projekt_Forschungen\\Projekt_1",
+  "target_hardware": "CPU reference; C++ differential when g++ is available"
+}

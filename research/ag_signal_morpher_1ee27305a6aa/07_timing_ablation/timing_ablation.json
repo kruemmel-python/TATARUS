@@ -1,0 +1,83 @@
+{
+  "acceptance_correction": {
+    "effective_transmission_gate_is_state_dependent": false,
+    "kernel_differs_from_event_matched_constant": false,
+    "kernel_differs_from_global_mean_constant": true,
+    "kernel_gate_is_globally_state_dependent": true,
+    "wrapper_timing_confounded": true
+  },
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "decision": "KEEP_AND_RESEARCH",
+  "effective_gate_definition": "g_j(t) conditioned on previous_spike_j(t-1)=1",
+  "emission_state": {
+    "effective_gate_mean": 0.8893404878731872,
+    "effective_gate_variance_max": 7.383757194643859e-17,
+    "event_constant_max_voltage_rmse": 2.7818216007044036e-08,
+    "event_constant_total_spike_disagreement": 0,
+    "interpretation": "The gate is causally captured before reset, but normalized pre-reset voltages remain on the kernel's positive plateau."
+  },
+  "per_seed_summary": [
+    {
+      "emission_effective_mean": 0.8893404887270933,
+      "emission_effective_variance": 6.975881145448872e-17,
+      "reset_effective_mean": 0.1283111212878475,
+      "reset_effective_variance": 0.0,
+      "reset_vs_emission_spike_disagreement": 390,
+      "reset_vs_emission_voltage_rmse": 7.927355352866836,
+      "seed": 11
+    },
+    {
+      "emission_effective_mean": 0.889340486547189,
+      "emission_effective_variance": 7.383757194643859e-17,
+      "reset_effective_mean": 0.1283111212878475,
+      "reset_effective_variance": 0.0,
+      "reset_vs_emission_spike_disagreement": 407,
+      "reset_vs_emission_voltage_rmse": 8.251260593234731,
+      "seed": 23
+    },
+    {
+      "emission_effective_mean": 0.889340487744886,
+      "emission_effective_variance": 7.161643110114771e-17,
+      "reset_effective_mean": 0.1283111212878475,
+      "reset_effective_variance": 0.0,
+      "reset_vs_emission_spike_disagreement": 375,
+      "reset_vs_emission_voltage_rmse": 7.9685727761436445,
+      "seed": 38
+    },
+    {
+      "emission_effective_mean": 0.8893404873212065,
+      "emission_effective_variance": 6.091189298662853e-17,
+      "reset_effective_mean": 0.1283111212878475,
+      "reset_effective_variance": 0.0,
+      "reset_vs_emission_spike_disagreement": 394,
+      "reset_vs_emission_voltage_rmse": 8.228687500547649,
+      "seed": 53
+    },
+    {
+      "emission_effective_mean": 0.8893404890255605,
+      "emission_effective_variance": 6.406695022060623e-17,
+      "reset_effective_mean": 0.1283111212878475,
+      "reset_effective_variance": 0.0,
+      "reset_vs_emission_spike_disagreement": 361,
+      "reset_vs_emission_voltage_rmse": 7.828373527780734,
+      "seed": 71
+    }
+  ],
+  "plasticity_enabled": false,
+  "reset_locked": {
+    "effective_gate_mean": 0.1283111212878475,
+    "effective_gate_variance_max": 0.0,
+    "event_constant_max_voltage_rmse": 0.0,
+    "event_constant_total_spike_disagreement": 0,
+    "interpretation": "Every transmitted spike is multiplied by the gate evaluated at reset voltage; the phenotype is constant attenuation.",
+    "state_shuffled_max_voltage_rmse": 7.64000703426669
+  },
+  "seeds": [
+    11,
+    23,
+    38,
+    53,
+    71
+  ],
+  "status": "wrapper_timing_confounded"
+}

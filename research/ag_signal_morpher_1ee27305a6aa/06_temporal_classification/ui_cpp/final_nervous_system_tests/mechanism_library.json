@@ -1,0 +1,85 @@
+{
+  "schema": "agns-mechanisms-v1",
+  "mechanisms": [
+    {
+      "id": "generated_polarity_gate",
+      "formula": "g=clip((1+tanh(K(phi)))/2,0.05,0.95)",
+      "placement": "praesynaptische Freisetzungsstaerke",
+      "parameter_range": "phi in [-4,4], g in [0.05,0.95]",
+      "evidence": "RESET_LOCKED und Event-Gate-Ablationen Stufen 6-11",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "signed_local_eligibility",
+      "formula": "e<-clip(e*exp(-dt/tau)+post*preTrace-pre*postTrace)",
+      "placement": "lokaler Zustand jeder aktiven Synapse",
+      "parameter_range": "tau>0, |e|<=e_max",
+      "evidence": "Trace-essential Recall-XOR: 1.000 vs 0.486111 auf 12 Holdout-Netzen",
+      "status": "task_advantage_confirmed_stage18"
+    },
+    {
+      "id": "short_term_resource",
+      "formula": "R<-R+(1-R)dt/tau_rec; release=u*R",
+      "placement": "praesynaptische Vesikelressource",
+      "parameter_range": "R,u in [0,1]",
+      "evidence": "synthetische Invarianz- und Langzeittests",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "rate_homeostasis",
+      "formula": "theta_h<-theta_h+eta*(rate-target)*dt",
+      "placement": "neuronale Erregbarkeit",
+      "parameter_range": "target>=0, theta_h in [-12,12] mV",
+      "evidence": "Stabilitaets- und Stoerungstests",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "reward_modulated_consolidation",
+      "formula": "dw=eta*dopamine*eligibility",
+      "placement": "lokale Langzeitplastizitaet",
+      "parameter_range": "|w| begrenzt; Dale-Vorzeichen erhalten",
+      "evidence": "Closed-loop Softwareumwelt",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "structural_coactivity",
+      "formula": "grow/prune=f(trace,usage,age,energy)",
+      "placement": "rekurrente Topologie",
+      "parameter_range": "periodisch, deterministisch geseedet",
+      "evidence": "Struktur- und Snapshot-Regression",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "axonal_path_repair",
+      "formula": "w_new<-w_consolidated(parent), delay_new<-max(1,delay_parent-1)",
+      "placement": "inaktive, zuvor benutzte Sensor-Motor-Bahn",
+      "parameter_range": "|w_parent|>=0.20, usage_parent>=0.05, Endpunkte aktiv",
+      "evidence": "8/8 Holdout-Seeds: Funktionsverlust und >=70 Prozent Wiedergewinn",
+      "status": "functional_recovery_confirmed_stage18"
+    },
+    {
+      "id": "topographic_raw_projection",
+      "formula": "sensory_channel->overlapping_excitatory_microassembly",
+      "placement": "rohe multimodale Eingangsprojektion",
+      "parameter_range": "fanout=5, AMPA/NMDA, geseedete feste Topografie",
+      "evidence": "8/8 Holdout-Seeds; mittlere Transitionserkennung 77.3438 Prozent",
+      "status": "sequence_representation_confirmed_stage18"
+    },
+    {
+      "id": "evoked_state_representation",
+      "formula": "r_evoked=r_fast-r_slow; p includes signed dendritic deviation",
+      "placement": "Assembly- und Reaktionszustand",
+      "parameter_range": "tau_slow=5000 ms, signed dendritic state in [-1,1]",
+      "evidence": "8/8 Holdout-Seeds; Reaktivierung 0.907323, nach Schaden 0.852185",
+      "status": "stable_representation_confirmed_stage18"
+    },
+    {
+      "id": "competitive_temporal_assembly",
+      "formula": "winner=max cosine(p_k,r); update winner or create if sim<threshold",
+      "placement": "reizphasengebundener Assembly-Katalog",
+      "parameter_range": "maxAssemblies>=1, similarity in [0,1]",
+      "evidence": "8/8 Holdout-Seeds; im Mittel 6.125 getrennte Assemblies",
+      "status": "representation_catalog_confirmed_stage18"
+    }
+  ]
+}

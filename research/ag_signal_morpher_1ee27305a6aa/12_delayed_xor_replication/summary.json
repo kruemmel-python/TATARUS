@@ -1,0 +1,30 @@
+{
+  "experiment_id": "GO-SNN-DXOR-MS24-D2-v1",
+  "experiment_hash": "C18E63A3EA120D7C",
+  "task": "delayed_xor",
+  "seed_count": 24,
+  "delay_condition_count": 2,
+  "raw_evaluation_count": 288,
+  "noninferiority_margin": -0.030000000000,
+  "claims": {
+    "scoped_efficiency_replication": false,
+    "strong_all_control_efficiency_replication": false,
+    "accuracy_superiority_all_controls": false
+  },
+  "mode_means": [
+    {"mode": "kernel", "accuracy": 0.512152777778, "spikes_per_correct": 10.176464433986, "firing_rate_hz": 1.310108326100},
+    {"mode": "constant", "accuracy": 0.513020833333, "spikes_per_correct": 10.154037894713, "firing_rate_hz": 1.313838252315},
+    {"mode": "disabled", "accuracy": 0.515625000000, "spikes_per_correct": 10.787852682770, "firing_rate_hz": 1.408329716435},
+    {"mode": "sign", "accuracy": 0.513454861111, "spikes_per_correct": 10.119236157697, "firing_rate_hz": 1.308978045428},
+    {"mode": "tanh", "accuracy": 0.511718750000, "spikes_per_correct": 10.228719853621, "firing_rate_hz": 1.326723451968},
+    {"mode": "random", "accuracy": 0.514756944444, "spikes_per_correct": 10.155229402170, "firing_rate_hz": 1.314177336516}
+  ],
+  "kernel_comparisons": [
+    {"control": "constant", "accuracy_difference": -0.000868055556, "accuracy_lower_95_one_sided": -0.008680555556, "accuracy_p_holm": 1.000000000000, "spike_cost_benefit": -0.022426539273, "cost_p_holm": 1.000000000000},
+    {"control": "disabled", "accuracy_difference": -0.003472222222, "accuracy_lower_95_one_sided": -0.019965277778, "accuracy_p_holm": 1.000000000000, "spike_cost_benefit": 0.611388248785, "cost_p_holm": 0.040359959640},
+    {"control": "sign", "accuracy_difference": -0.001302083333, "accuracy_lower_95_one_sided": -0.003906250000, "accuracy_p_holm": 1.000000000000, "spike_cost_benefit": -0.057228276288, "cost_p_holm": 1.000000000000},
+    {"control": "tanh", "accuracy_difference": 0.000434027778, "accuracy_lower_95_one_sided": -0.007378472222, "accuracy_p_holm": 1.000000000000, "spike_cost_benefit": 0.052255419636, "cost_p_holm": 1.000000000000},
+    {"control": "random", "accuracy_difference": -0.002604166667, "accuracy_lower_95_one_sided": -0.013020833333, "accuracy_p_holm": 1.000000000000, "spike_cost_benefit": -0.021235031815, "cost_p_holm": 1.000000000000}
+  ],
+  "decision": "NO_EFFICIENCY_REPLICATION"
+}

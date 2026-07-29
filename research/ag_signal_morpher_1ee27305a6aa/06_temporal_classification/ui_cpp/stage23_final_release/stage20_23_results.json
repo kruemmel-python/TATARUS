@@ -1,0 +1,7 @@
+{
+  "stage20": "confirmed",
+  "stage21": "confirmed",
+  "stage22": "validated_executed_sizes",
+  "stage23": "package_ready_external_run_pending",
+  "maximum_executed_neurons": 65536
+}

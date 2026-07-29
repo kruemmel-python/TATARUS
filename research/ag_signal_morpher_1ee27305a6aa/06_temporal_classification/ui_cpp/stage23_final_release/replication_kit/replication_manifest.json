@@ -1,0 +1,11 @@
+{
+  "schema": "agns-replication-v1",
+  "status": "package_ready_local_validation_only",
+  "hardware_threads": 12,
+  "artifacts": {
+    "expected_results.json": "B75F376734369487",
+    "independent_seeds.txt": "5D1B878CDFD8C476",
+    "run_clean_replication.bat": "4A0342BD39BB91B6",
+    "verify_external_results.ps1": "B59D8229CF8E5AFD"
+  }
+}

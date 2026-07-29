@@ -1,0 +1,36 @@
+{
+  "schema": "agns-end-goal-inventory-v1",
+  "source": "Agents_update.md",
+  "status": "integrated_experimental",
+  "implemented": [
+    "persistent multi-population E/I nervous-system core",
+    "soma and dendrite state",
+    "AMPA NMDA GABA-A GABA-B and modulatory receptors",
+    "per-synapse axon delay resource facilitation eligibility and consolidation",
+    "adaptation homeostasis neuromodulation energy regulation",
+    "structural pruning and growth",
+    "raw multimodal event stream without tokenizer or embeddings",
+    "incremental internal assemblies",
+    "closed perception-action-reward loop",
+    "seeded parameter evolution",
+    "versioned full-state snapshots",
+    "validated mechanism library",
+    "native persistent Win32 laboratory UI",
+    "CPU authoritative backend and tested OpenCL integration primitive"
+  ],
+  "validated": [
+    "same-seed determinism",
+    "exact snapshot continuation",
+    "finite long-running state",
+    "Dale sign preservation",
+    "continued operation after partial damage",
+    "CPU OpenCL differential parity"
+  ],
+  "not_claimed": [
+    "biological equivalence",
+    "consciousness",
+    "general intelligence",
+    "task superiority in the closed-loop environment",
+    "full GPU execution of every plasticity and structural mechanism"
+  ]
+}

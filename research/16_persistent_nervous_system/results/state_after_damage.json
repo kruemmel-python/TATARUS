@@ -1,0 +1,15 @@
+{
+  "schema": "agns-state-v1",
+  "step": 7500,
+  "state_hash": "49E39FDE9EAD26BA",
+  "neurons": 96,
+  "active_synapses": 1187,
+  "assemblies": 0,
+  "total_spikes": 401,
+  "total_transmissions": 5587,
+  "mean_rate_hz": 0.432953497,
+  "mean_energy": 0.999292708,
+  "dopamine": 0.000000000,
+  "acetylcholine": 2.000000000,
+  "finite": true
+}

@@ -1,0 +1,10 @@
+{
+  "status": "confirmed",
+  "assembly_passes": 8,
+  "sequence_passes": 8,
+  "trace_accuracy": 1,
+  "trace_control_accuracy": 0.486111,
+  "trace_essential": true,
+  "recovery_passes": 8,
+  "seed_count": 8
+}

@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tatarus"
+version = "1.0.0"
+description = "TATARUS – A Persistent Synthetic Nervous System"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [
+  { name = "Ralf Krümmel" }
+]
+keywords = [
+  "spiking-neural-network",
+  "synthetic-nervous-system",
+  "computational-neuroscience",
+  "reservoir-computing",
+  "neuroplasticity"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: C++",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[project.urls]
+Homepage = "https://github.com/kruemmel-python/TATARUS"
+Repository = "https://github.com/kruemmel-python/TATARUS.git"
+Issues = "https://github.com/kruemmel-python/TATARUS/issues"
+
+[tool.setuptools]
+package-dir = {"" = "research/ag_signal_morpher_1ee27305a6aa/05_integration/source"}
+
+[tool.setuptools.packages.find]
+where = ["research/ag_signal_morpher_1ee27305a6aa/05_integration/source"]

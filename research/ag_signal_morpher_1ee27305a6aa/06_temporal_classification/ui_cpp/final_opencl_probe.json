@@ -1,0 +1,9 @@
+{
+  "status": "executed",
+  "platforms": 2,
+  "devices": 5,
+  "device": "gfx90c",
+  "samples": 512,
+  "maximum_absolute_error": 0,
+  "message": "CPU/OpenCL differential PASS"
+}

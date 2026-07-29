@@ -1,0 +1,58 @@
+{
+  "active_input_variables": [
+    "x"
+  ],
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "critical_identity": {
+    "consequence": "bounded odd soft-sign coordinate, not one",
+    "implemented_form": "x/(abs(x)+1e-6)",
+    "textbook_form": "x/x"
+  },
+  "exact_repeated_subexpression": {
+    "consequence": "sdiv numerator is amplified by 1e6 before tanh",
+    "form": "A(x)-A(x)",
+    "runtime_value": 0.0
+  },
+  "kernel_expression": "((logabs(sin(cos(sdiv(x,x)))) - tanh(sdiv((sin(sdiv(x,x)) * -0.357064),(logabs(sin(cos(sdiv(x,x)))) - logabs(sin(cos(sdiv(x,x)))))))) - sin((logabs(sin(cos(sdiv(x,x)))) * (sin(cos(sdiv(x,x))) + cos(sin(sdiv(x,x)))))))",
+  "operators": [
+    {
+      "backend_differences": [
+        "Python conversion failures are caught; compiled backends accept numeric values only.",
+        "OpenCL uses float32 while Python and C++ references use float64."
+      ],
+      "domain": "convertible scalar",
+      "fallback": 0.0,
+      "formal_definition": "finite(float(v)) ? clamp(v,-1e6,1e6) : 0",
+      "name": "sanitize"
+    },
+    {
+      "backend_differences": [
+        "float32 vs float64 rounding"
+      ],
+      "domain": "scalar",
+      "fallback": "through sanitize",
+      "formal_definition": "exp(clamp(sanitize(x),-20,20))",
+      "name": "expclamp"
+    },
+    {
+      "backend_differences": [
+        "float32 may round 1e-9 additions"
+      ],
+      "domain": "scalar",
+      "epsilon": 1e-09,
+      "fallback": "finite for all sanitized inputs",
+      "formal_definition": "log(abs(sanitize(x))+1e-9)",
+      "name": "logabs"
+    },
+    {
+      "backend_differences": [
+        "float32 vs float64 rounding"
+      ],
+      "domain": "scalar pair",
+      "epsilon": 1e-06,
+      "fallback": "finite numerator divided by positive denominator",
+      "formal_definition": "sanitize(a)/(abs(sanitize(b))+1e-6)",
+      "name": "sdiv"
+    }
+  ]
+}

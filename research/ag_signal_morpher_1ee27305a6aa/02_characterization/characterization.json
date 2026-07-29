@@ -1,0 +1,87 @@
+{
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "conditioning": "Poor near zero because the protected zero denominator amplifies small signed inputs; well-conditioned on the outer plateaus.",
+  "continuity": {
+    "cause": "tanh(-0.357064e6*sin(q(x)))",
+    "mathematical": "continuous under protected operators",
+    "numerical_observation": "near-step transition around zero"
+  },
+  "domain_scanned": [
+    -1000000.0,
+    1000000.0
+  ],
+  "finite_ratio": 1.0,
+  "gate_maximum_observed": 0.9103080907636858,
+  "gate_minimum_observed": 0.12831061138065003,
+  "information_behavior": "Most input magnitude is compressed into two polarity plateaus; the narrow neighborhood of zero carries high sensitivity.",
+  "iteration_of_tanh_kernel": [
+    {
+      "converged": true,
+      "initial": -10.0,
+      "tail_span": 0.0,
+      "terminal": -0.7433783199485733
+    },
+    {
+      "converged": true,
+      "initial": -1.0,
+      "tail_span": 0.0,
+      "terminal": -0.7433783199485733
+    },
+    {
+      "converged": true,
+      "initial": -0.01,
+      "tail_span": 0.0,
+      "terminal": -0.7433783199485733
+    },
+    {
+      "converged": true,
+      "initial": 0.0,
+      "tail_span": 0.0,
+      "terminal": 0.7786811013507785
+    },
+    {
+      "converged": true,
+      "initial": 0.01,
+      "tail_span": 0.0,
+      "terminal": 0.7786811013507785
+    },
+    {
+      "converged": true,
+      "initial": 1.0,
+      "tail_span": 0.0,
+      "terminal": 0.7786811013507785
+    },
+    {
+      "converged": true,
+      "initial": 10.0,
+      "tail_span": 0.0,
+      "terminal": 0.7786811013507785
+    }
+  ],
+  "kernel_at_zero": 0.13991628339787235,
+  "limits_sampled": {
+    "negative_large": -0.9579895894869603,
+    "positive_large": 1.0420104105130394
+  },
+  "max_abs_sampled_slope": 357064000006.1242,
+  "maximum": 1.1587012682642364,
+  "minimum": -0.9579895894869603,
+  "q_range_for_finite_sanitized_input": [
+    -0.999999999999,
+    0.999999999999
+  ],
+  "samples": 8045,
+  "saturation": "q approaches +/-1 for |x| much greater than 1e-6; the tanh term then saturates, producing near-constant outer plateaus.",
+  "soft_sign_coordinate": "q(x)=x/(abs(x)+1e-6)",
+  "status": "characterized",
+  "symmetry": {
+    "classification": "approximately affine point-symmetric away from the transition",
+    "not_exact_reason": "even A and sine-composition terms add a small offset"
+  },
+  "zero_brackets": [
+    [
+      -1e-12,
+      -1e-13
+    ]
+  ]
+}

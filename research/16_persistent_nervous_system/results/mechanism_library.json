@@ -1,0 +1,53 @@
+{
+  "schema": "agns-mechanisms-v1",
+  "mechanisms": [
+    {
+      "id": "generated_polarity_gate",
+      "formula": "g=clip((1+tanh(K(phi)))/2,0.05,0.95)",
+      "placement": "praesynaptische Freisetzungsstaerke",
+      "parameter_range": "phi in [-4,4], g in [0.05,0.95]",
+      "evidence": "RESET_LOCKED und Event-Gate-Ablationen Stufen 6-11",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "signed_local_eligibility",
+      "formula": "e<-clip(e*exp(-dt/tau)+post*preTrace-pre*postTrace)",
+      "placement": "lokaler Zustand jeder aktiven Synapse",
+      "parameter_range": "tau>0, |e|<=e_max",
+      "evidence": "Trace-essential Recall-XOR Stufe 15",
+      "status": "experimentally_supported"
+    },
+    {
+      "id": "short_term_resource",
+      "formula": "R<-R+(1-R)dt/tau_rec; release=u*R",
+      "placement": "praesynaptische Vesikelressource",
+      "parameter_range": "R,u in [0,1]",
+      "evidence": "synthetische Invarianz- und Langzeittests",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "rate_homeostasis",
+      "formula": "theta_h<-theta_h+eta*(rate-target)*dt",
+      "placement": "neuronale Erregbarkeit",
+      "parameter_range": "target>=0, theta_h in [-12,12] mV",
+      "evidence": "Stabilitaets- und Stoerungstests",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "reward_modulated_consolidation",
+      "formula": "dw=eta*dopamine*eligibility",
+      "placement": "lokale Langzeitplastizitaet",
+      "parameter_range": "|w| begrenzt; Dale-Vorzeichen erhalten",
+      "evidence": "Closed-loop Softwareumwelt",
+      "status": "integrated_experimental"
+    },
+    {
+      "id": "structural_coactivity",
+      "formula": "grow/prune=f(trace,usage,age,energy)",
+      "placement": "rekurrente Topologie",
+      "parameter_range": "periodisch, deterministisch geseedet",
+      "evidence": "Struktur- und Snapshot-Regression",
+      "status": "integrated_experimental"
+    }
+  ]
+}

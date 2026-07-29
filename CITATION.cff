@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use TATARUS in your research, please cite this software."
+title: "TATARUS – A Persistent Synthetic Nervous System"
+type: software
+authors:
+  - family-names: "Krümmel"
+    given-names: "Ralf"
+version: 1.0.0
+date-released: 2026-07-29
+license: Apache-2.0
+repository-code: "https://github.com/kruemmel-python/TATARUS"
+url: "https://github.com/kruemmel-python/TATARUS"
+abstract: >-
+  A persistent synthetic nervous system and research platform for
+  event-driven, biologically inspired information processing.
+keywords:
+  - spiking neural network
+  - synthetic nervous system
+  - computational neuroscience
+  - neuroplasticity

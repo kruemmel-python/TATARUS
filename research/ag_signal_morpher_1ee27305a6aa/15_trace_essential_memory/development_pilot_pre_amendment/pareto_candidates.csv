@@ -1,0 +1,2 @@
+rank,tau_ms,gain,maximum,accuracy,spikes_per_correct,best_control_accuracy,final_objective
+1,400.000000000000,0.350000000000,0.500000000000,0.937500000000,62.543103448276,0.937500000000,0.906228448276

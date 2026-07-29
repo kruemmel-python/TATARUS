@@ -1,0 +1,19 @@
+{
+  "assembly_within_similarity": 0.540467760,
+  "assembly_between_similarity": 0.981816957,
+  "similar_cue_reactivation": 0.012537690,
+  "cross_modal_similarity": 0.006536199,
+  "post_damage_similarity": 0.013114508,
+  "snapshot_exact": true,
+  "transition_accuracy": 0.104166667,
+  "boundary_response_ratio": 0.976847671,
+  "repetition_stability": 0.769794740,
+  "trace_accuracy": 0.500000000,
+  "no_trace_accuracy": 0.500000000,
+  "trace_essential": false,
+  "function_before": 0.003513933,
+  "function_immediate": 0.002418356,
+  "function_recovered": -0.058099239,
+  "pathway_jaccard": 0.282051282,
+  "alternative_solution": false
+}

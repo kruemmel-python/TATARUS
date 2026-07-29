@@ -1,0 +1,375 @@
+{
+  "acceptance": {
+    "adversarial_controls_pass": true,
+    "all_neurons_participate": true,
+    "all_runs_finite": true,
+    "effective_transmission_gate_is_state_dependent": false,
+    "kernel_differs_from_disabled": true,
+    "kernel_differs_from_event_matched_constant": false,
+    "kernel_differs_from_global_mean_constant": true,
+    "kernel_gate_is_globally_state_dependent": true,
+    "wrapper_timing_confounded": true
+  },
+  "adversarial_controls": {
+    "alternating_extreme_finite_drive": {
+      "expected": "finite contained state despite +/-1e6 input",
+      "metrics": {
+        "active_fraction": 1.0,
+        "binned_coincidence_rate": 1.0,
+        "effective_gate_count": 360,
+        "effective_gate_maximum": 0.1283111212878475,
+        "effective_gate_mean": 0.1283111212878475,
+        "effective_gate_minimum": 0.1283111212878475,
+        "effective_gate_variance": 0.0,
+        "finite": true,
+        "gate_variance": 0.0016085850167456045,
+        "globally_computed_gate_mean": 0.13198761306226048,
+        "globally_computed_gate_variance": 0.0016085850167456045,
+        "mean_firing_rate_hz": 250.0,
+        "mean_gate": 0.13198761306226048,
+        "mean_pairwise_spike_correlation": 0.2727272727272727,
+        "neuron_count": 12,
+        "normalized_voltage_energy": 2778288.1406301516,
+        "pairwise_correlation_pairs": 66,
+        "population_spike_count_fano": 2.999999999,
+        "steps": 120,
+        "total_spikes": 360
+      },
+      "passed": true
+    },
+    "silent_input": {
+      "expected": "stable rest without spontaneous spikes",
+      "metrics": {
+        "active_fraction": 0.0,
+        "binned_coincidence_rate": 0.0,
+        "effective_gate_count": 0,
+        "effective_gate_maximum": 0.0,
+        "effective_gate_mean": 0.0,
+        "effective_gate_minimum": 0.0,
+        "effective_gate_variance": 0.0,
+        "finite": true,
+        "gate_variance": 0.0,
+        "globally_computed_gate_mean": 0.569505174980645,
+        "globally_computed_gate_variance": 0.0,
+        "mean_firing_rate_hz": 0.0,
+        "mean_gate": 0.569505174980645,
+        "mean_pairwise_spike_correlation": 0.0,
+        "neuron_count": 12,
+        "normalized_voltage_energy": 0.0,
+        "pairwise_correlation_pairs": 0,
+        "population_spike_count_fano": 0.0,
+        "steps": 240,
+        "total_spikes": 0
+      },
+      "passed": true
+    }
+  },
+  "aggregate": {
+    "constant": {
+      "active_fraction": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "all_finite": true,
+      "binned_coincidence_rate": {
+        "max": 0.5873015873015873,
+        "mean": 0.5304679158048203,
+        "min": 0.491869918699187
+      },
+      "effective_gate_mean": {
+        "max": 0.8124763768884922,
+        "mean": 0.8119934350401572,
+        "min": 0.811570596657959
+      },
+      "effective_gate_variance": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "gate_variance": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "globally_computed_gate_variance": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "kernel_vs_event_constant_spike_disagreement": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "kernel_vs_event_constant_voltage_rmse": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "mean_firing_rate_hz": {
+        "max": 26.78571428571429,
+        "mean": 25.13888888888889,
+        "min": 23.908730158730158
+      },
+      "mean_gate": {
+        "max": 0.8124763768884922,
+        "mean": 0.8119934350401572,
+        "min": 0.811570596657959
+      },
+      "mean_pairwise_spike_correlation": {
+        "max": 0.02668856472741694,
+        "mean": 0.024004307644208075,
+        "min": 0.01778742356076194
+      },
+      "normalized_voltage_energy": {
+        "max": 0.5186087329581006,
+        "mean": 0.5078584224372646,
+        "min": 0.49685284779958655
+      },
+      "population_spike_count_fano": {
+        "max": 1.5269841244391535,
+        "mean": 1.4617055348817292,
+        "min": 1.3349206328440917
+      },
+      "spike_disagreement_vs_disabled": {
+        "max": 518.0,
+        "mean": 475.0,
+        "min": 434.0
+      },
+      "total_spikes": {
+        "max": 270.0,
+        "mean": 253.4,
+        "min": 241.0
+      },
+      "voltage_rmse_vs_constant": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "voltage_rmse_vs_disabled": {
+        "max": 8.795544737160665,
+        "mean": 8.57387254397138,
+        "min": 8.08327679524846
+      }
+    },
+    "disabled": {
+      "active_fraction": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "all_finite": true,
+      "binned_coincidence_rate": {
+        "max": 0.6561264822134387,
+        "mean": 0.5688583735165662,
+        "min": 0.5277777777777778
+      },
+      "effective_gate_mean": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "effective_gate_variance": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "gate_variance": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "globally_computed_gate_variance": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "kernel_vs_event_constant_spike_disagreement": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "kernel_vs_event_constant_voltage_rmse": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "mean_firing_rate_hz": {
+        "max": 29.166666666666668,
+        "mean": 27.142857142857146,
+        "min": 25.099206349206348
+      },
+      "mean_gate": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "mean_pairwise_spike_correlation": {
+        "max": 0.031969522446084,
+        "mean": 0.023808413607058584,
+        "min": 0.014830193501521574
+      },
+      "normalized_voltage_energy": {
+        "max": 0.5059845538110558,
+        "mean": 0.4940309851787343,
+        "min": 0.48043948701997785
+      },
+      "population_spike_count_fano": {
+        "max": 1.6229154876126266,
+        "mean": 1.458964786060535,
+        "min": 1.2656746013288278
+      },
+      "spike_disagreement_vs_disabled": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "total_spikes": {
+        "max": 294.0,
+        "mean": 273.6,
+        "min": 253.0
+      },
+      "voltage_rmse_vs_constant": {
+        "max": 8.795544737160665,
+        "mean": 8.57387254397138,
+        "min": 8.08327679524846
+      },
+      "voltage_rmse_vs_disabled": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      }
+    },
+    "kernel": {
+      "active_fraction": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "all_finite": true,
+      "binned_coincidence_rate": {
+        "max": 0.9583333333333334,
+        "mean": 0.9310298675683292,
+        "min": 0.9047619047619048
+      },
+      "effective_gate_mean": {
+        "max": 0.1283111212878475,
+        "mean": 0.1283111212878475,
+        "min": 0.1283111212878475
+      },
+      "effective_gate_variance": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "gate_variance": {
+        "max": 0.05280109834534799,
+        "mean": 0.05254463942598607,
+        "min": 0.05225187676557034
+      },
+      "globally_computed_gate_variance": {
+        "max": 0.05280109834534799,
+        "mean": 0.05254463942598607,
+        "min": 0.05225187676557034
+      },
+      "kernel_vs_event_constant_spike_disagreement": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "kernel_vs_event_constant_voltage_rmse": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "mean_firing_rate_hz": {
+        "max": 16.765873015873016,
+        "mean": 16.686507936507937,
+        "min": 16.666666666666668
+      },
+      "mean_gate": {
+        "max": 0.8124763768884922,
+        "mean": 0.8119934350401572,
+        "min": 0.811570596657959
+      },
+      "mean_pairwise_spike_correlation": {
+        "max": 0.18359827350247396,
+        "mean": 0.16939149769180228,
+        "min": 0.1472786609116749
+      },
+      "normalized_voltage_energy": {
+        "max": 0.6191299428926117,
+        "mean": 0.6158099776782591,
+        "min": 0.6138823105651241
+      },
+      "population_spike_count_fano": {
+        "max": 5.135714272874999,
+        "mean": 4.811428559413601,
+        "min": 4.314285703499999
+      },
+      "spike_disagreement_vs_disabled": {
+        "max": 421.0,
+        "mean": 399.0,
+        "min": 371.0
+      },
+      "total_spikes": {
+        "max": 169.0,
+        "mean": 168.2,
+        "min": 168.0
+      },
+      "voltage_rmse_vs_constant": {
+        "max": 8.08211555570837,
+        "mean": 7.830050401081709,
+        "min": 7.597009434613211
+      },
+      "voltage_rmse_vs_disabled": {
+        "max": 8.775958685095324,
+        "mean": 8.22847059253022,
+        "min": 7.888742136600615
+      }
+    }
+  },
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "backend_differential": {
+    "opencl": {
+      "max_abs_error": null,
+      "mean_abs_error": null,
+      "reason": "No OpenCL runtime is required by this CPU-first integration.",
+      "samples": 0,
+      "status": "not_run"
+    },
+    "python_cpp": {
+      "max_abs_error": null,
+      "mean_abs_error": null,
+      "reason": "g++ driver found, but compiler frontend failed with exit code 1",
+      "samples": 0,
+      "status": "not_run"
+    },
+    "python_original_export": {
+      "deterministic_repeat": true,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "samples": 2052,
+      "status": "passed"
+    }
+  },
+  "controls": {
+    "baseline": "gate=1 (kernel disabled)",
+    "constant": "per-seed fixed gate equal to the kernel run's mean gate",
+    "event_conditioned_constant": "per-seed fixed gate equal to gates actually multiplied by previous_spike=1",
+    "kernel": "gate=clip(0.5*(1+tanh(K(normalized_voltage))),0.05,0.95)",
+    "plasticity": "identical pair-STDP enabled in all modes"
+  },
+  "interpretation": "The globally computed kernel values vary, but every gate that actually multiplies a transmitted spike is reset-locked and constant. The phenotype is constant post-spike attenuation, not dynamic synaptic efficacy.",
+  "model_scope": "synthetic current-based LIF research model",
+  "seeds": [
+    11,
+    23,
+    38,
+    53,
+    71
+  ],
+  "status": "experimentally_supported",
+  "steps_per_trial": 420
+}

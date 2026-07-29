@@ -1,0 +1,96 @@
+{
+  "aggregate": {
+    "constant": {
+      "accuracy_max": 1.0,
+      "accuracy_mean": 0.95625,
+      "accuracy_min": 0.9375,
+      "accuracy_stddev_across_seeds": 0.025,
+      "balanced_accuracy_mean": 0.95625,
+      "mean_firing_rate_hz": 2.8255208333333335,
+      "seed_count": 5
+    },
+    "disabled": {
+      "accuracy_max": 0.9375,
+      "accuracy_mean": 0.9,
+      "accuracy_min": 0.875,
+      "accuracy_stddev_across_seeds": 0.030618621784789725,
+      "balanced_accuracy_mean": 0.9,
+      "mean_firing_rate_hz": 6.022135416666667,
+      "seed_count": 5
+    },
+    "kernel": {
+      "accuracy_max": 1.0,
+      "accuracy_mean": 0.95625,
+      "accuracy_min": 0.9375,
+      "accuracy_stddev_across_seeds": 0.025,
+      "balanced_accuracy_mean": 0.95625,
+      "mean_firing_rate_hz": 2.8255208333333335,
+      "seed_count": 5
+    },
+    "random": {
+      "accuracy_max": 1.0,
+      "accuracy_mean": 0.95625,
+      "accuracy_min": 0.875,
+      "accuracy_stddev_across_seeds": 0.04677071733467427,
+      "balanced_accuracy_mean": 0.95625,
+      "mean_firing_rate_hz": 2.955729166666667,
+      "seed_count": 5
+    },
+    "sign": {
+      "accuracy_max": 1.0,
+      "accuracy_mean": 0.96875,
+      "accuracy_min": 0.9375,
+      "accuracy_stddev_across_seeds": 0.02795084971874737,
+      "balanced_accuracy_mean": 0.96875,
+      "mean_firing_rate_hz": 2.763671875,
+      "seed_count": 5
+    },
+    "tanh": {
+      "accuracy_max": 1.0,
+      "accuracy_mean": 0.95625,
+      "accuracy_min": 0.90625,
+      "accuracy_stddev_across_seeds": 0.03186887195995491,
+      "balanced_accuracy_mean": 0.95625,
+      "mean_firing_rate_hz": 2.6888020833333335,
+      "seed_count": 5
+    }
+  },
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "best_mean_accuracy": 0.96875,
+  "controls": {
+    "constant": "fixed per seed to the kernel condition's event-conditioned effective gate mean",
+    "disabled": "neutral multiplicative gate 1",
+    "random": "seeded uniform variation around matched constant mean",
+    "sign": "0.9 for non-negative state, else 0.1",
+    "tanh": "clip((1+tanh(4z))/2,0.05,0.95)"
+  },
+  "kernel_claim": {
+    "interpretation": "A positive result against damping controls does not establish uniqueness. Sign and tanh controls test whether the generated formula adds value beyond a generic polarity gate.",
+    "outperforms_all_strong_baselines": false,
+    "outperforms_matched_constant_on_mean": false
+  },
+  "seeds": [
+    11,
+    23,
+    38,
+    53,
+    71
+  ],
+  "status": "experimentally_supported_on_synthetic_temporal_task",
+  "task": {
+    "data_leakage_control": "standardization and readout fitting use training folds only",
+    "description": "Balanced two-class classification. Both classes contain the same two neural assemblies; only temporal order is reversed.",
+    "features": "population firing rate for two assemblies in four time bins",
+    "folds": 4,
+    "network_neurons": 16,
+    "noise_std": 5.0,
+    "pulse_current": 2.0,
+    "readout": "L2-regularized logistic regression fitted inside each fold",
+    "samples_per_class_per_seed": 16,
+    "steps": 120,
+    "time_bins": 4
+  },
+  "tied_best_modes": [
+    "sign"
+  ]
+}

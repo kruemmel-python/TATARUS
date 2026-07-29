@@ -1,0 +1,9 @@
+{
+  "status": "not_confirmed",
+  "seeds": 4,
+  "passes": 0,
+  "nervous_accuracy": 0.539062,
+  "no_trace_accuracy": 0.5,
+  "no_system_accuracy": 0.5,
+  "snapshot_exact": true
+}

@@ -1,0 +1,5 @@
+400;0.35;0.5
+development_accuracy=0.9375
+development_spikes_per_correct=62.543103448275858
+best_control_accuracy=0.9375
+objective=0.90622844827586202

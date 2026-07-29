@@ -1,0 +1,230 @@
+{
+  "aggregate": {
+    "disabled": {
+      "accuracy_mean": 0.8166666666666667,
+      "accuracy_stddev_across_seeds": 0.07728015412913085,
+      "assembly_separation_mean": 2.6487404910325276,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 0.0,
+      "spike_disagreement_vs_projection_total": 1279,
+      "spikes_per_correct_decision_mean": 14.01444699091758,
+      "voltage_rmse_vs_projection_mean": 7.5975944350886735
+    },
+    "distribution_random": {
+      "accuracy_mean": 0.9083333333333334,
+      "accuracy_stddev_across_seeds": 0.0485912657903775,
+      "assembly_separation_mean": 2.705142589417764,
+      "effective_gate_entropy_bits_mean": 0.7092878806549572,
+      "effective_gate_variance_mean": 0.09196343178366781,
+      "spike_disagreement_vs_projection_total": 1189,
+      "spikes_per_correct_decision_mean": 10.605519480519481,
+      "voltage_rmse_vs_projection_mean": 7.317607292204019
+    },
+    "ei_event_constant": {
+      "accuracy_mean": 0.9,
+      "accuracy_stddev_across_seeds": 0.07264831572567791,
+      "assembly_separation_mean": 2.8887082370271764,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 0.0,
+      "spike_disagreement_vs_projection_total": 1174,
+      "spikes_per_correct_decision_mean": 11.019676909665467,
+      "voltage_rmse_vs_projection_mean": 7.068670619923461
+    },
+    "event_constant": {
+      "accuracy_mean": 0.8833333333333334,
+      "accuracy_stddev_across_seeds": 0.055277079839256685,
+      "assembly_separation_mean": 2.9578139944196664,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 0.0,
+      "spike_disagreement_vs_projection_total": 1119,
+      "spikes_per_correct_decision_mean": 10.953312134090165,
+      "voltage_rmse_vs_projection_mean": 6.638994679175349
+    },
+    "isi_distribution_random": {
+      "accuracy_mean": 0.9583333333333334,
+      "accuracy_stddev_across_seeds": 0.04564354645876384,
+      "assembly_separation_mean": 3.3917901812560154,
+      "effective_gate_entropy_bits_mean": 1.4812054426110683,
+      "effective_gate_variance_mean": 1.325623713556308e-14,
+      "spike_disagreement_vs_projection_total": 1037,
+      "spikes_per_correct_decision_mean": 5.295807453416149,
+      "voltage_rmse_vs_projection_mean": 6.6525043567608435
+    },
+    "isi_event_constant": {
+      "accuracy_mean": 0.9583333333333334,
+      "accuracy_stddev_across_seeds": 0.04564354645876384,
+      "assembly_separation_mean": 3.3917901812560154,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 0.0,
+      "spike_disagreement_vs_projection_total": 1037,
+      "spikes_per_correct_decision_mean": 5.295807453416149,
+      "voltage_rmse_vs_projection_mean": 6.6525043577806
+    },
+    "kernel_ei_only": {
+      "accuracy_mean": 0.8416666666666666,
+      "accuracy_stddev_across_seeds": 0.0716860438920219,
+      "assembly_separation_mean": 2.612780265866427,
+      "effective_gate_entropy_bits_mean": 0.8546313929126365,
+      "effective_gate_variance_mean": 0.06979954652453552,
+      "spike_disagreement_vs_projection_total": 1106,
+      "spikes_per_correct_decision_mean": 11.638252515346338,
+      "voltage_rmse_vs_projection_mean": 6.561372100591834
+    },
+    "kernel_isi_only": {
+      "accuracy_mean": 0.9583333333333334,
+      "accuracy_stddev_across_seeds": 0.04564354645876384,
+      "assembly_separation_mean": 3.3917901812560154,
+      "effective_gate_entropy_bits_mean": 1.5317451915782958,
+      "effective_gate_variance_mean": 1.451102574361171e-14,
+      "spike_disagreement_vs_projection_total": 1037,
+      "spikes_per_correct_decision_mean": 5.295807453416149,
+      "voltage_rmse_vs_projection_mean": 6.652504378390053
+    },
+    "kernel_overshoot_only": {
+      "accuracy_mean": 0.85,
+      "accuracy_stddev_across_seeds": 0.08975274678557506,
+      "assembly_separation_mean": 2.852204867277263,
+      "effective_gate_entropy_bits_mean": 0.5468315441539443,
+      "effective_gate_variance_mean": 2.1871795841639586e-10,
+      "spike_disagreement_vs_projection_total": 1216,
+      "spikes_per_correct_decision_mean": 12.758398787016366,
+      "voltage_rmse_vs_projection_mean": 7.123618578250628
+    },
+    "kernel_projection": {
+      "accuracy_mean": 0.9083333333333334,
+      "accuracy_stddev_across_seeds": 0.06123724356957945,
+      "assembly_separation_mean": 3.112362490026162,
+      "effective_gate_entropy_bits_mean": 0.6849559466662584,
+      "effective_gate_variance_mean": 0.08757850210950885,
+      "spike_disagreement_vs_projection_total": 0,
+      "spikes_per_correct_decision_mean": 7.959999999999999,
+      "voltage_rmse_vs_projection_mean": 0.0
+    },
+    "kernel_slope_only": {
+      "accuracy_mean": 0.85,
+      "accuracy_stddev_across_seeds": 0.08975274678557506,
+      "assembly_separation_mean": 2.852204867277263,
+      "effective_gate_entropy_bits_mean": 0.9710098832259917,
+      "effective_gate_variance_mean": 2.927986607905746e-13,
+      "spike_disagreement_vs_projection_total": 1216,
+      "spikes_per_correct_decision_mean": 12.758398787016366,
+      "voltage_rmse_vs_projection_mean": 7.123619288254899
+    },
+    "overshoot_event_constant": {
+      "accuracy_mean": 0.85,
+      "accuracy_stddev_across_seeds": 0.08975274678557506,
+      "assembly_separation_mean": 2.852204867277263,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 0.0,
+      "spike_disagreement_vs_projection_total": 1216,
+      "spikes_per_correct_decision_mean": 12.758398787016366,
+      "voltage_rmse_vs_projection_mean": 7.12361974099163
+    },
+    "sign_projection": {
+      "accuracy_mean": 0.9166666666666666,
+      "accuracy_stddev_across_seeds": 0.04564354645876384,
+      "assembly_separation_mean": 3.0634267983536043,
+      "effective_gate_entropy_bits_mean": 0.6883406788227336,
+      "effective_gate_variance_mean": 0.09746490366642604,
+      "spike_disagreement_vs_projection_total": 713,
+      "spikes_per_correct_decision_mean": 7.769683794466403,
+      "voltage_rmse_vs_projection_mean": 4.644258567017958
+    },
+    "slope_event_constant": {
+      "accuracy_mean": 0.85,
+      "accuracy_stddev_across_seeds": 0.08975274678557506,
+      "assembly_separation_mean": 2.852204867277263,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 0.0,
+      "spike_disagreement_vs_projection_total": 1216,
+      "spikes_per_correct_decision_mean": 12.758398787016366,
+      "voltage_rmse_vs_projection_mean": 7.1236192422096565
+    },
+    "state_shuffled": {
+      "accuracy_mean": 0.8583333333333334,
+      "accuracy_stddev_across_seeds": 0.04249182927993987,
+      "assembly_separation_mean": 2.8348593296898916,
+      "effective_gate_entropy_bits_mean": 0.8426190964687745,
+      "effective_gate_variance_mean": 0.11443017944689207,
+      "spike_disagreement_vs_projection_total": 1147,
+      "spikes_per_correct_decision_mean": 11.377425381635907,
+      "voltage_rmse_vs_projection_mean": 7.132564804795036
+    },
+    "tanh_projection": {
+      "accuracy_mean": 0.9,
+      "accuracy_stddev_across_seeds": 0.03333333333333334,
+      "assembly_separation_mean": 2.773644325446034,
+      "effective_gate_entropy_bits_mean": 1.2943778840757891,
+      "effective_gate_variance_mean": 0.07940445800965631,
+      "spike_disagreement_vs_projection_total": 1098,
+      "spikes_per_correct_decision_mean": 9.385036702428007,
+      "voltage_rmse_vs_projection_mean": 6.616706547802126
+    },
+    "time_shifted": {
+      "accuracy_mean": 0.85,
+      "accuracy_stddev_across_seeds": 0.08975274678557506,
+      "assembly_separation_mean": 2.852204867277263,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 7.099478640660284e-17,
+      "spike_disagreement_vs_projection_total": 1216,
+      "spikes_per_correct_decision_mean": 12.758398787016366,
+      "voltage_rmse_vs_projection_mean": 7.123619156091017
+    }
+  },
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "best_accuracy": 0.9583333333333334,
+  "best_variants": [
+    "isi_distribution_random",
+    "isi_event_constant",
+    "kernel_isi_only"
+  ],
+  "claims": {
+    "isi_beats_distribution_random": false,
+    "isi_beats_event_constant": false,
+    "projection_beats_all_controls": false,
+    "projection_beats_distribution_random": false,
+    "projection_beats_ei_only": true,
+    "projection_beats_event_constant": true,
+    "projection_gate_is_dynamic": true,
+    "projection_is_most_spike_efficient": false
+  },
+  "component_ablations": [
+    "kernel_ei_only",
+    "kernel_slope_only",
+    "kernel_overshoot_only",
+    "kernel_isi_only"
+  ],
+  "controls": [
+    "event_constant",
+    "ei_event_constant",
+    "slope_event_constant",
+    "overshoot_event_constant",
+    "isi_event_constant",
+    "isi_distribution_random",
+    "sign_projection",
+    "tanh_projection",
+    "distribution_random",
+    "time_shifted",
+    "state_shuffled",
+    "disabled"
+  ],
+  "decision": "KEEP_AND_RESEARCH",
+  "projection": {
+    "component_ranges": {
+      "ei_balance": "[-1,1]",
+      "isi_state": "2*exp(-ISI/50 ms)-1; first spike=-1",
+      "membrane_slope": "tanh(dV/dt / 1 mV/ms)",
+      "threshold_overshoot": "tanh((V-threshold) / 1 mV)"
+    },
+    "formula": "0.40*ei_balance + 0.25*membrane_slope + 0.15*threshold_overshoot + 0.20*isi_state",
+    "timing": "all components captured at threshold crossing"
+  },
+  "seeds": [
+    11,
+    23,
+    38,
+    53,
+    71
+  ],
+  "status": "causal_feature_projection_characterized"
+}

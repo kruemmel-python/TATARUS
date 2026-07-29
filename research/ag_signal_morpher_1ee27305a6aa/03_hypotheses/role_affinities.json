@@ -1,0 +1,60 @@
+{
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "roles": [
+    {
+      "basis": "every transmitted spike is evaluated one step after reset and receives the identical gate 0.1283111212878475",
+      "class": "experimentally confirmed in synthetic LIF network",
+      "confidence": 0.99,
+      "expected_effect": "constant recurrent post-spike attenuation",
+      "falsification": "event-conditioned constant does not reproduce trajectories",
+      "metric": "effective gate variance, voltage RMSE and spike disagreement",
+      "rank": 1,
+      "role": "reset_locked_post_spike_attenuator",
+      "wrapper": "I_syn_i += w_ij * spike_j * clip((1+tanh(K(z_j)))/2)"
+    },
+    {
+      "basis": "gate captured before reset, but pre-reset voltage remains on the positive kernel plateau",
+      "class": "causal wrapper tested; dynamic effect not confirmed",
+      "confidence": 0.34,
+      "expected_effect": "causal spike-bound attenuation",
+      "falsification": "event-conditioned constant reproduces trajectories",
+      "metric": "effective gate variance and event-matched RMSE",
+      "rank": 2,
+      "role": "emission_state_gate",
+      "wrapper": "on spike: emission_gate=G(pre_reset_state); next step: I_syn+=w*spike*emission_gate"
+    },
+    {
+      "basis": "sharp state transition can shift excitability near a boundary",
+      "class": "hypothesis",
+      "confidence": 0.61,
+      "expected_effect": "state-selective firing threshold",
+      "falsification": "no firing selectivity beyond a constant threshold shift",
+      "metric": "rate separation and false activation rate",
+      "rank": 3,
+      "role": "activation_threshold_modulator",
+      "wrapper": "theta_i=theta_0+alpha*tanh(K(z_i))"
+    },
+    {
+      "basis": "outer magnitude compression and narrow high-sensitivity zero crossing",
+      "class": "derived hypothesis",
+      "confidence": 0.57,
+      "expected_effect": "robust direction encoding with weak magnitude dependence",
+      "falsification": "sign(delta) baseline matches every task metric",
+      "metric": "noise robustness and downstream classification score",
+      "rank": 4,
+      "role": "polarity_feature_for_event_detection",
+      "wrapper": "feature_t=tanh(K(delta_signal_t))"
+    },
+    {
+      "basis": "low gate plateau suppresses coupling without sign inversion",
+      "class": "hypothesis from supplied morphogenesis assay",
+      "confidence": 0.52,
+      "expected_effect": "temporary subsystem isolation",
+      "falsification": "matched binary or sigmoid gate is equivalent",
+      "metric": "synchronization error and recovery time",
+      "rank": 5,
+      "role": "dynamic_coupling_interruptor",
+      "wrapper": "coupling=g(K(z))*interaction"
+    }
+  ]
+}

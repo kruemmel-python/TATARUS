@@ -1,0 +1,117 @@
+{
+  "aggregate": {
+    "disabled": {
+      "accuracy_mean": 0.8833333333333334,
+      "accuracy_stddev_across_seeds": 0.04082482904638626,
+      "assembly_separation_mean": 2.427433035292035,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 0.0,
+      "spike_disagreement_vs_kernel_total": 1261,
+      "spikes_per_correct_decision_mean": 13.90909090909091,
+      "voltage_rmse_vs_kernel_mean": 7.5312076549832625
+    },
+    "distribution_random": {
+      "accuracy_mean": 0.9166666666666666,
+      "accuracy_stddev_across_seeds": 0.04564354645876384,
+      "assembly_separation_mean": 2.648938767264151,
+      "effective_gate_entropy_bits_mean": 0.8634148762057018,
+      "effective_gate_variance_mean": 0.058435667739067096,
+      "spike_disagreement_vs_kernel_total": 1179,
+      "spikes_per_correct_decision_mean": 11.629004329004328,
+      "voltage_rmse_vs_kernel_mean": 6.601719413325829
+    },
+    "event_constant": {
+      "accuracy_mean": 0.95,
+      "accuracy_stddev_across_seeds": 0.04859126579037751,
+      "assembly_separation_mean": 2.5864789478469707,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 0.0,
+      "spike_disagreement_vs_kernel_total": 1108,
+      "spikes_per_correct_decision_mean": 11.37953133822699,
+      "voltage_rmse_vs_kernel_mean": 6.391904453558105
+    },
+    "kernel_ei": {
+      "accuracy_mean": 0.9083333333333334,
+      "accuracy_stddev_across_seeds": 0.04859126579037751,
+      "assembly_separation_mean": 2.6416566588070944,
+      "effective_gate_entropy_bits_mean": 0.8546313929126365,
+      "effective_gate_variance_mean": 0.06979954652453552,
+      "spike_disagreement_vs_kernel_total": 0,
+      "spikes_per_correct_decision_mean": 11.690912855260681,
+      "voltage_rmse_vs_kernel_mean": 0.0
+    },
+    "sign": {
+      "accuracy_mean": 0.875,
+      "accuracy_stddev_across_seeds": 0.04564354645876384,
+      "assembly_separation_mean": 2.4055699174795686,
+      "effective_gate_entropy_bits_mean": 0.6017794422636278,
+      "effective_gate_variance_mean": 0.08270362349833847,
+      "spike_disagreement_vs_kernel_total": 1102,
+      "spikes_per_correct_decision_mean": 13.118136645962732,
+      "voltage_rmse_vs_kernel_mean": 6.268325312418205
+    },
+    "state_shuffled": {
+      "accuracy_mean": 0.8583333333333334,
+      "accuracy_stddev_across_seeds": 0.033333333333333305,
+      "assembly_separation_mean": 2.417781831752924,
+      "effective_gate_entropy_bits_mean": 0.9440582921540287,
+      "effective_gate_variance_mean": 0.09556969171958828,
+      "spike_disagreement_vs_kernel_total": 1161,
+      "spikes_per_correct_decision_mean": 12.282121212121211,
+      "voltage_rmse_vs_kernel_mean": 7.118757292801277
+    },
+    "tanh": {
+      "accuracy_mean": 0.9083333333333334,
+      "accuracy_stddev_across_seeds": 0.08498365855987974,
+      "assembly_separation_mean": 2.711302069516978,
+      "effective_gate_entropy_bits_mean": 1.0989671879136238,
+      "effective_gate_variance_mean": 0.09395497261131402,
+      "spike_disagreement_vs_kernel_total": 943,
+      "spikes_per_correct_decision_mean": 11.864975845410628,
+      "voltage_rmse_vs_kernel_mean": 5.567550439993521
+    },
+    "time_shifted": {
+      "accuracy_mean": 0.8833333333333334,
+      "accuracy_stddev_across_seeds": 0.03118047822311615,
+      "assembly_separation_mean": 2.3905982493907465,
+      "effective_gate_entropy_bits_mean": 0.0,
+      "effective_gate_variance_mean": 7.099478640660284e-17,
+      "spike_disagreement_vs_kernel_total": 1172,
+      "spikes_per_correct_decision_mean": 12.943549783549784,
+      "voltage_rmse_vs_kernel_mean": 6.886770221602066
+    }
+  },
+  "artifact": "ag_signal_morpher_1ee27305a6aa",
+  "best_accuracy": 0.95,
+  "best_variants": [
+    "event_constant"
+  ],
+  "claims": {
+    "effective_gate_is_dynamic": true,
+    "kernel_beats_all_controls": false,
+    "kernel_beats_event_constant": false
+  },
+  "controls": [
+    "event_constant",
+    "sign",
+    "tanh",
+    "distribution_random",
+    "time_shifted",
+    "state_shuffled",
+    "disabled"
+  ],
+  "decision": "KEEP_AND_RESEARCH",
+  "event": {
+    "feature": "(I_exc-I_inh)/(abs(I_exc)+abs(I_inh)+1e-9)",
+    "structure": "source_neuron, emission_step, amplitude, generated_gate, feature_value",
+    "timing": "gate captured at threshold crossing before reset"
+  },
+  "seeds": [
+    11,
+    23,
+    38,
+    53,
+    71
+  ],
+  "status": "event_causal_dynamic_gate_characterized"
+}

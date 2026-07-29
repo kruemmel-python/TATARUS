@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "evidence_scope": "synthetic_research_model",
+  "historical_regression": {
+    "status": "passed",
+    "effective_gate": 0.128311121288
+  },
+  "extended_biophysical_null": {
+    "status": "passed",
+    "spikes": 21,
+    "transmissions": 71
+  },
+  "homogeneous_operator_ecology": [
+    {"mode": "kernel", "accuracy": 0.625000000000},
+    {"mode": "constant", "accuracy": 0.625000000000},
+    {"mode": "disabled", "accuracy": 0.625000000000},
+    {"mode": "sign", "accuracy": 0.625000000000},
+    {"mode": "tanh", "accuracy": 0.625000000000},
+    {"mode": "random", "accuracy": 0.625000000000}
+  ],
+  "single_operator_roles": {
+    "EE_voltage_rmse": 1.686076963162,
+    "EI_voltage_rmse": 0.003436195524,
+    "IE_voltage_rmse": 0.010040203973,
+    "II_voltage_rmse": 0.000000000000
+  },
+  "extended_multiseed": {
+    "seeds": [11, 23, 38, 53, 71],
+    "minimum_two_sided_exact_p": 0.062500000000,
+    "kernel_vs_disabled_p": 1.000000000000,
+    "kernel_accuracy": [
+      1.000000000000,
+      0.750000000000,
+      0.625000000000,
+      0.750000000000,
+      0.500000000000
+    ],
+    "disabled_accuracy": [
+      1.000000000000,
+      0.750000000000,
+      0.625000000000,
+      0.750000000000,
+      0.375000000000
+    ]
+  }
+}

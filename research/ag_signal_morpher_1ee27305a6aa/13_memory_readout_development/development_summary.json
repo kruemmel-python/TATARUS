@@ -1,0 +1,8 @@
+{
+  "development_hash": "EECE7A502A958561",
+  "feature_count": 195,
+  "overall_accuracy": 0.906250000000,
+  "medium_delay_accuracy": 0.881944444444,
+  "long_delay_accuracy": 0.930555555556,
+  "freeze_for_holdout": true
+}
