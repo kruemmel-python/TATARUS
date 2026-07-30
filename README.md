@@ -9,6 +9,38 @@ Forschungsplattform für ereignisgetriebene, biologisch inspirierte
 Informationsverarbeitung. Der verbindliche Name des Projekts und Systems ist
 **TATARUS – A Persistent Synthetic Nervous System**.
 
+## Wissenschaftliches Unterprojekt: Runenkrieg × TATARUS
+
+[`Runenkrieg_Tatarus`](Runenkrieg_Tatarus) überführt den persistenten
+TATARUS-Kern in ein vollständig offline ausführbares Android-Kartenspiel.
+Das Unterprojekt ist gleichzeitig:
+
+- interaktive Agent–Umwelt-Umgebung,
+- persistenter lernender Spielgegner,
+- mobiles Trainingssystem,
+- Messoberfläche für neuronale, synaptische und energetische Zustände,
+- sowie Ablations- und Holdout-Labor mit identischen vollständigen
+  Testpartien.
+
+Der mobile Kern besitzt 72 Neuronen, 432 Dale-konforme Synapsen,
+Axonverzögerungen, passive Dendriten, Generated-Operator-Modulation,
+lokale signierte Eligibility-Spuren, kurzzeitige synaptische Dynamik,
+Assemblies, Homeostase, Energie und einen begrenzten Aktionsreadout.
+Alle 32 Spiel- und Kandidatenkanäle sind neuronalseitig verdrahtet.
+
+Der Standardmodus **Reines TATARUS** entscheidet ohne Beimischung des
+Regel- oder Aktionsmittelwerts. Regel-, Zufalls- und
+Mechanismusablationen erlauben kausale Vergleiche. Die integrierte
+Evaluation bestätigt technische Funktionsfähigkeit und
+Reproduzierbarkeit; sie ist noch kein statistischer Nachweis strategischer
+Überlegenheit.
+
+Einstieg:
+
+- [Android-Unterprojekt und Buildanleitung](Runenkrieg_Tatarus/README.md)
+- [wissenschaftliches Whitepaper](Runenkrieg_Tatarus/Whitepaper_TATARUS_Runenkrieg_DE.md)
+- [technische TATARUS-Runenkrieg-Dokumentation](Runenkrieg_Tatarus/Tatarus_Runenkrieg_Dokumentation.md)
+
 ## Bestätigtes persistentes Endsystem
 
 Forschungsstufe 16 ergänzt das bisherige Versuchsnetz um einen dauerhaft
