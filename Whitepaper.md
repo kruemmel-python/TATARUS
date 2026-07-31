@@ -4,7 +4,7 @@
 
 ### A mathematically defined, biologically inspired substrate for continuous perception, local memory, adaptive action, and structural self-repair
 
-**Whitepaper · English Edition · Version 1.1**<br>
+**Whitepaper · English Edition · Version 1.2**<br>
 **Software release:** TATARUS 1.4.0 · Runenkrieg 10k comparative study<br>
 **Developer and author:** Ralf Krümmel<br>
 **Date:** July 31, 2026<br>
@@ -99,7 +99,7 @@ and a contextual bandit at 250 through 10,000 environmental rounds. On 50
 untouched replication seeds, the frozen TATARUS winner achieved a 70% game
 win rate; the conventional winner frozen by the same selection principle
 achieved 60%. The ten-point difference is numerical and reproduced, but it
-is not statistically significant ((p=0.4019)).
+is not statistically significant ($p=0.4019$).
 
 The results support TATARUS as a functional synthetic nervous-system
 architecture within the documented domains. They do not establish
@@ -1015,15 +1015,17 @@ card hand, weather, resources, changing opponent actions, delayed
 consequences, and locally continued state. The game is therefore both an
 application and a laboratory.
 
-```mermaid
-flowchart LR
-    O["128 state and history channels"] --> N["TATARUS LargeScale\n1,024 neurons"]
-    N --> S["32,768 plastic synapses"]
-    S --> R["neural readout"]
-    R --> A["card action"]
-    A --> E["round outcome and reward"]
-    E --> N
-```
+<p align="center">
+  <a href="docs/whitepaper/images/android/runenkrieg_tatarus_reference_lab.png"><img src="docs/whitepaper/images/android/runenkrieg_tatarus_reference_lab.png" alt="TATARUS reference laboratory on Android" width="31%"></a>
+  &nbsp;&nbsp;
+  <a href="docs/whitepaper/images/android/runenkrieg_tatarus_largescale_lab.png"><img src="docs/whitepaper/images/android/runenkrieg_tatarus_largescale_lab.png" alt="TATARUS LargeScale laboratory on Android" width="31%"></a>
+</p>
+
+<p align="center"><sub><strong>Figure 1.</strong> Laboratory views captured
+directly from the test device: the continuously learning reference app
+(left) and the LargeScale branch (right). The second view exposes the active
+topology of 1,024 neurons, 32,768 synapses, and 128 channels. Selecting an
+image opens the original PNG.</sub></p>
 
 The first mobile integration contained 72 neurons, 432 synapses, and 32
 wired channels. In 37 genuinely played rounds it achieved a 48% round win
@@ -1053,7 +1055,7 @@ Development was not a sequence of positive results. Several findings
 narrowed the supported hypothesis and directly determined the next design:
 
 1. **RESET_LOCKED was constant.** The operator initially interpreted as
-   dynamic produced exactly (g=0.1283111212878475) after spike reset. An
+   dynamic produced exactly $g=0.1283111212878475$ after spike reset. An
    event-matched constant reproduced the phenotype, so operator geometry was
    not causally established. The state was retained as
    `RESET_LOCKED_REFERENCE`; research moved to an Event-Causal Gate computed
@@ -1155,6 +1157,18 @@ On previously untouched seeds 60000–60049:
 | TATARUS LargeScale | 35 | 15 | **70%** | +6.50 | 60.633% |
 | Contextual Bandit | 30 | 20 | **60%** | +2.52 | 53.262% |
 
+<p align="center">
+  <a href="docs/whitepaper/images/android/runenkrieg_tatarus_winner_status.png"><img src="docs/whitepaper/images/android/runenkrieg_tatarus_winner_status.png" alt="Frozen TATARUS winner on Android" width="31%"></a>
+  &nbsp;&nbsp;
+  <a href="docs/whitepaper/images/android/runenkrieg_tensorflow_winner_status.png"><img src="docs/whitepaper/images/android/runenkrieg_tensorflow_winner_status.png" alt="Frozen TensorFlow winner on Android" width="31%"></a>
+</p>
+
+<p align="center"><sub><strong>Figure 2.</strong> Separate mobile replication
+applications. Left: the hash-identified TATARUS snapshot from seed 20260732
+after 10,000 rounds, with weight, eligibility, and assembly updates disabled.
+Right: the frozen LiteRT/TensorFlow checkpoint using the same 128-channel
+state space and no weight updates.</sub></p>
+
 TATARUS state remained unchanged during replication and learning was
 disabled. This is a genuine frozen-winner test, not continued online
 training. The observed difference is
@@ -1168,7 +1182,7 @@ Statistical interpretation prevents overclaiming:
 - TATARUS Wilson 95% CI: 56.25–80.90%,
 - contextual-bandit Wilson 95% CI: 46.18–72.39%,
 - Newcombe 95% CI for the difference: −8.51 to +27.60 percentage points,
-- two-sided Fisher exact test: (p=0.4019).
+- two-sided Fisher exact test: $p=0.4019$.
 
 The result is therefore a **numerical advantage reproduced on untouched
 seeds**, not statistically confirmed superiority. More replication seeds and
@@ -1229,6 +1243,7 @@ post hoc parameter selection.
 - [Runenkrieg comparative report](RUNENKRIEG_VERGLEICHSBERICHT.md)
 - [TATARUS 10k statistics](Runenkrieg_Tatarus_10k_Benchmark/results_full/STATISTICAL_REPORT.md)
 - [Conventional 10k statistics](Runenkrieg_TensorFlow_Benchmark/results_full/STATISTICAL_REPORT.md)
+- [Provenance and hashes of the Android figures](docs/whitepaper/images/android/README.md)
 
 ### Scientific Context
 

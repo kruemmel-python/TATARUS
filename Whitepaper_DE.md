@@ -4,7 +4,7 @@
 
 ### Ein mathematisch definiertes, biologisch inspiriertes Substrat für kontinuierliche Wahrnehmung, lokales Gedächtnis, adaptive Handlung und strukturelle Selbstreparatur
 
-**Whitepaper · Deutsche Ausgabe · Version 1.1**<br>
+**Whitepaper · Deutsche Ausgabe · Version 1.2**<br>
 **Softwarestand:** TATARUS 1.4.0 · Runenkrieg-Vergleichsstudie 10k<br>
 **Entwickler und Autor:** Ralf Krümmel<br>
 **Datum:** 31. Juli 2026<br>
@@ -106,7 +106,7 @@ und Contextual Bandit bei 250 bis 10.000 Umweltrunden. Der eingefrorene
 TATARUS-Gewinner erreichte auf 50 unberührten Replikationsseeds 70 %
 Spielsiege; der nach identischem Auswahlprinzip eingefrorene konventionelle
 Gewinner erreichte 60 %. Die Differenz von zehn Prozentpunkten ist
-numerisch und reproduziert, aber mit (p=0{,}4019) nicht statistisch
+numerisch und reproduziert, aber mit $p=0{,}4019$ nicht statistisch
 signifikant.
 
 Die Ergebnisse stützen TATARUS als funktionale synthetische
@@ -1049,15 +1049,17 @@ Handlungskreislauf mit Kartenhand, Wetter, Ressourcen, wechselnden
 Gegneraktionen, verzögerten Konsequenzen und lokal fortgeschriebenem Zustand.
 Das Spiel ist deshalb zugleich Anwendung und Labor.
 
-```mermaid
-flowchart LR
-    O["128 Zustands- und Verlaufskanäle"] --> N["TATARUS LargeScale\n1.024 Neuronen"]
-    N --> S["32.768 plastische Synapsen"]
-    S --> R["neuronaler Readout"]
-    R --> A["Kartenaktion"]
-    A --> E["Rundenergebnis und Reward"]
-    E --> N
-```
+<p align="center">
+  <a href="docs/whitepaper/images/android/runenkrieg_tatarus_reference_lab.png"><img src="docs/whitepaper/images/android/runenkrieg_tatarus_reference_lab.png" alt="TATARUS-Referenzlabor auf Android" width="31%"></a>
+  &nbsp;&nbsp;
+  <a href="docs/whitepaper/images/android/runenkrieg_tatarus_largescale_lab.png"><img src="docs/whitepaper/images/android/runenkrieg_tatarus_largescale_lab.png" alt="TATARUS-LargeScale-Labor auf Android" width="31%"></a>
+</p>
+
+<p align="center"><sub><strong>Abbildung 1.</strong> Direkt vom Testgerät
+erfasste Laboransichten der fortlaufend lernenden Referenz-App (links) und
+des LargeScale-Zweigs (rechts). Die zweite Ansicht weist die tatsächlich
+aktive Topologie mit 1.024 Neuronen, 32.768 Synapsen und 128 Kanälen aus.
+Anklicken öffnet die unverkleinerte PNG-Datei.</sub></p>
 
 Der erste mobile Integrationsstand besaß 72 Neuronen, 432 Synapsen und 32
 verdrahtete Kanäle. In 37 tatsächlich gespielten Runden erreichte er 48 %
@@ -1091,7 +1093,7 @@ Architektur:
 
 1. **RESET_LOCKED war konstant.** Der zunächst dynamisch interpretierte
    Operator erzeugte nach dem Spike-Reset exakt
-   (g=0{,}1283111212878475). Eine ereignisgematchte Konstante reproduzierte
+   $g=0{,}1283111212878475$. Eine ereignisgematchte Konstante reproduzierte
    den Phänotyp. Die Operatorgeometrie war damit nicht kausal belegt. Der
    Stand blieb als `RESET_LOCKED_REFERENCE`; die Neuausrichtung war ein am
    Emissionszeitpunkt berechnetes Event-Causal Gate.
@@ -1199,6 +1201,18 @@ Auf den zuvor unberührten Seeds 60000–60049 ergab sich:
 | TATARUS LargeScale | 35 | 15 | **70 %** | +6,50 | 60,633 % |
 | Contextual Bandit | 30 | 20 | **60 %** | +2,52 | 53,262 % |
 
+<p align="center">
+  <a href="docs/whitepaper/images/android/runenkrieg_tatarus_winner_status.png"><img src="docs/whitepaper/images/android/runenkrieg_tatarus_winner_status.png" alt="Eingefrorener TATARUS-Gewinner auf Android" width="31%"></a>
+  &nbsp;&nbsp;
+  <a href="docs/whitepaper/images/android/runenkrieg_tensorflow_winner_status.png"><img src="docs/whitepaper/images/android/runenkrieg_tensorflow_winner_status.png" alt="Eingefrorener TensorFlow-Gewinner auf Android" width="31%"></a>
+</p>
+
+<p align="center"><sub><strong>Abbildung 2.</strong> Getrennte mobile
+Replikationsprogramme. Links: der hash-identifizierte TATARUS-Snapshot aus
+Seed 20260732 nach 10.000 Runden, ohne Gewichts-, Eligibility- oder
+Assembly-Updates. Rechts: der eingefrorene LiteRT/TensorFlow-Checkpoint mit
+demselben 128-Kanal-Zustandsraum und deaktivierten Gewichtsänderungen.</sub></p>
+
 Der TATARUS-Zustand blieb während der Replikation unverändert; Lernen war
 deaktiviert. Das ist ein echter Frozen-Winner-Test und kein fortgesetztes
 Onlinetraining. Der beobachtete Unterschied beträgt
@@ -1212,7 +1226,7 @@ Die statistische Einordnung verhindert eine Überinterpretation:
 - TATARUS Wilson-95-%-KI: 56,25–80,90 %,
 - Contextual-Bandit Wilson-95-%-KI: 46,18–72,39 %,
 - Newcombe-95-%-KI der Differenz: −8,51 bis +27,60 Prozentpunkte,
-- zweiseitiger Fisher-Test: (p=0{,}4019).
+- zweiseitiger Fisher-Test: $p=0{,}4019$.
 
 Damit ist ein **numerischer, auf unberührten Seeds reproduzierter Vorsprung**
 beobachtet, aber keine statistisch bestätigte Überlegenheit. Für eine
@@ -1273,6 +1287,7 @@ erhalten und nicht durch nachträgliche Parameterwahl verdeckt werden.
 - [Runenkrieg-Vergleichsbericht](RUNENKRIEG_VERGLEICHSBERICHT.md)
 - [TATARUS-10k-Statistik](Runenkrieg_Tatarus_10k_Benchmark/results_full/STATISTICAL_REPORT.md)
 - [Konventionelle 10k-Statistik](Runenkrieg_TensorFlow_Benchmark/results_full/STATISTICAL_REPORT.md)
+- [Provenienz und Hashes der Android-Abbildungen](docs/whitepaper/images/android/README.md)
 
 ### Fachlicher Kontext
 
