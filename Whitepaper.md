@@ -4,11 +4,11 @@
 
 ### A mathematically defined, biologically inspired substrate for continuous perception, local memory, adaptive action, and structural self-repair
 
-**Whitepaper · English Edition · Version 1.0**  
-**Software release:** TATARUS 1.0.0  
-**Developer and author:** Ralf Krümmel  
-**Date:** July 29, 2026  
-**License:** Apache License 2.0  
+**Whitepaper · English Edition · Version 1.1**<br>
+**Software release:** TATARUS 1.4.0 · Runenkrieg 10k comparative study<br>
+**Developer and author:** Ralf Krümmel<br>
+**Date:** July 31, 2026<br>
+**License:** Apache License 2.0<br>
 **Repository:** <https://github.com/kruemmel-python/TATARUS>
 
 > **TATARUS does not attempt to reproduce the material implementation of a
@@ -57,11 +57,12 @@ complete literature review is also outside the scope of this whitepaper.
 
 ### Contents
 
-1. Positioning and research objective — pages 3–6  
-2. Architecture and mathematics — pages 7–17  
-3. Experimental design and evidence — pages 18–25  
-4. Context, limitations, and open science — pages 26–28  
-5. Research program and references — pages 29–30
+1. Positioning and research objective — pages 3–6<br>
+2. Architecture and mathematics — pages 7–17<br>
+3. Experimental design and evidence — pages 18–25<br>
+4. Runenkrieg real-world laboratory and research redirections — pages 26–27<br>
+5. Complete model comparison and replication — pages 28–29<br>
+6. Limitations, open science, and references — page 30
 
 <div align="right"><sub>Page 2 of 30</sub></div>
 <div style="page-break-after: always;"></div>
@@ -90,12 +91,22 @@ experience-dependent action, multiscale memory, and provenance-guided
 functional repair. A full scaling run executed 65,536 neurons and 2,097,328
 active synapses with exact snapshot restoration.
 
+TATARUS was then integrated into the Android card game Runenkrieg as an
+application-level laboratory and scaled from 72 neurons, 432 synapses, and
+32 input channels to 1,024 neurons, 32,768 synapses, and 128 channels. A
+symmetric learning-curve study compared TATARUS with MLP, GRU, DQN, PPO,
+and a contextual bandit at 250 through 10,000 environmental rounds. On 50
+untouched replication seeds, the frozen TATARUS winner achieved a 70% game
+win rate; the conventional winner frozen by the same selection principle
+achieved 60%. The ten-point difference is numerical and reproduced, but it
+is not statistically significant ((p=0.4019)).
+
 The results support TATARUS as a functional synthetic nervous-system
 architecture within the documented domains. They do not establish
 biological equivalence, consciousness, universal world generalization,
 general intelligence, or universal superiority of the generated operator.
-Independent execution of the prepared replication package on a second
-hardware platform remains pending.
+A strictly paired run with bit-identical episode sequences and independent
+execution on a second hardware platform remain pending.
 
 **Keywords:** synthetic nervous system, spiking neural network, eligibility
 memory, structural plasticity, Cognitive Bridge, continuous internal state.
@@ -172,6 +183,9 @@ evidence chain rather than the product definition.
 | procedural lifeworld | 6/8 individual criteria | world family and G5 |
 | multiscale memory | 8/8 seeds | synthetic memory assays |
 | scaling | 65,536 neurons | integrity, not real time |
+| Runenkrieg learning curve | 81% at 10,000 rounds | 5 seeds, 30/30 runs |
+| frozen TATARUS replication | 70% (35/50) | learning disabled, state unchanged |
+| best conventional winner | 60% (30/50) | contextual bandit, frozen |
 | external replication | prepared | second hardware pending |
 
 The strongest supported overall statement is:
@@ -184,6 +198,10 @@ The results do **not** show that the specific Algorithmic Genesis operator is
 universally superior to simpler gates. In several tasks the sign gate was
 equivalent or more efficient, and the Delayed-XOR efficiency replication was
 negative. These negative findings remain part of the published evidence.
+
+The ten-point Runenkrieg replication advantage is a promising system-level
+observation, not a confirmed superiority claim: the 95% difference interval
+includes zero, and timings were recorded in different runtime environments.
 
 <div align="right"><sub>Page 5 of 30</sub></div>
 <div style="page-break-after: always;"></div>
@@ -989,158 +1007,216 @@ clearance. Complex plasticity and repair paths remain CPU-authoritative.
 
 <!-- PAGE 26/30 -->
 
-## Relationship to Other AI Components
+## Runenkrieg as Android Game and Scientific Laboratory
 
-| Category | Primary role | Relationship to TATARUS |
-|---|---|---|
-| LLM/reasoning model | language, knowledge, abstract planning | possible higher core |
-| conventional SNN | spiking dynamics or classification | TATARUS adds lifecycle, memory scales, bridge, and repair |
-| external memory | persistent data storage | can complement TATARUS but does not automatically alter local dynamics |
-| reinforcement-learning agent | policy optimization from reward | can act through the bridge |
-| world model | prediction of external state | TATARUS primarily models the internal state substrate |
+Synthetic stages 1–23 test isolated mechanisms. Runenkrieg adds a different
+class of evidence: a continuous, partially observable action loop with a
+card hand, weather, resources, changing opponent actions, delayed
+consequences, and locally continued state. The game is therefore both an
+application and a laboratory.
 
-TATARUS is not intended to replace all these components. It is positioned as
-a **substrate between continuous environmental coupling and higher-level
-cognition**.
+```mermaid
+flowchart LR
+    O["128 state and history channels"] --> N["TATARUS LargeScale\n1,024 neurons"]
+    N --> S["32,768 plastic synapses"]
+    S --> R["neural readout"]
+    R --> A["card action"]
+    A --> E["round outcome and reward"]
+    E --> N
+```
 
-The development contribution is not a claim that every elementary function
-is new. LIF dynamics, STDP, homeostasis, short-term plasticity, and assemblies
-have established precedents. The project contribution is their concrete
-persistent coupling with a generated operator, local transfer memory,
-bounded bridge, causal snapshot, and provenance-guided repair in one
-testable implementation.
+The first mobile integration contained 72 neurons, 432 synapses, and 32
+wired channels. In 37 genuinely played rounds it achieved a 48% round win
+rate. This demonstrated functional coupling and a balanced game, but neither
+reliable learning nor superiority. That state was retained as a research
+reference.
 
-Any strong priority or “first-ever” claim requires a separate systematic
-literature and patent review.
+The separate LargeScale branch increased population, connectivity, and
+sensory bandwidth to 1,024, 32,768, and 128. Channels encode only information
+available to the comparison systems: current game state, legal action
+candidates, and defined history signals. In neural mode, actions are selected
+from nervous state and learned readout without rule-table or experience-table
+mixing. Weights, traces, activity, and readout persist locally on the device.
+
+Runenkrieg does not test whether TATARUS thinks like a human. It tests whether
+a synthetic nervous system can learn, retain, and reproduce an interactive
+policy under mobile resource constraints.
 
 <div align="right"><sub>Page 26 of 30</sub></div>
 <div style="page-break-after: always;"></div>
 
 <!-- PAGE 27/30 -->
 
-## Limitations, Risks, and Responsible Interpretation
+## Failures, Falsifications, and Research Redirections
 
-The following are not confirmed:
+Development was not a sequence of positive results. Several findings
+narrowed the supported hypothesis and directly determined the next design:
 
-- human or animal consciousness and emotion,
-- biological, anatomical, or molecular equivalence,
-- complete brain simulation,
-- universal world or grammar generalization,
-- general intelligence,
-- universal superiority of the generated kernel,
-- productive real-time operation of the largest configuration,
-- independent replication on a second hardware platform.
+1. **RESET_LOCKED was constant.** The operator initially interpreted as
+   dynamic produced exactly (g=0.1283111212878475) after spike reset. An
+   event-matched constant reproduced the phenotype, so operator geometry was
+   not causally established. The state was retained as
+   `RESET_LOCKED_REFERENCE`; research moved to an Event-Causal Gate computed
+   at spike emission.
+2. **Delayed XOR did not yet prove internal memory.** Early variants either
+   failed across training seeds or could solve the task through explicit
+   readout memory and cue features. Longer filtered state and interaction
+   products improved performance without establishing a synapse-local
+   substrate. Stage 15 therefore removed cue features from the readout,
+   imposed a silent delay, and used a class-identical recall cue.
+3. **Eligibility effect was not eligibility necessity.** Modulating transfer
+   and permitting neutral deactivation was insufficient. The trace-essential
+   assay added gain-zero, constant, absolute-value, time-shift, synapse-swap,
+   sign-inversion, matched-random, E→E-only, and I→E-only controls to isolate
+   correct synapse, timing, and direction.
+4. **No universal kernel superiority.** The Delayed-XOR efficiency
+   replication was negative and the sign gate was sometimes sparser. The
+   program shifted from a privileged-formula claim to a testable ecology of
+   timing, projection, insertion site, and local mechanisms.
+5. **The open lifeworld was only partially successful.** Stage 20 passed six
+   of eight individual criteria. Multiscale memory later passed 8/8, but an
+   open world with freely emerging goals remains unconfirmed.
+6. **The first AI comparison was asymmetric.** Conventional models received
+   full 10,000-round selection while the mobile TATARUS app initially used an
+   online state not selected by the same procedure. That result was rejected
+   as a fair comparison. TATARUS then underwent the same multiseed checkpoint,
+   selection, and freezing process.
 
-Technical risks include parameter sensitivity, hidden correlations in
-synthetic tasks, scaling cost, interference over long lifecycles, and
-difficult-to-interpret assembly drift. Persistent state may also retain
-undesired experience. Reset, snapshot versioning, state audit, resource
-limits, and mechanism ablations are therefore safety-relevant.
-
-TATARUS must not be presented as a sentient being. Terms such as reward,
-novelty, energy, or dopamine denote functional numerical variables, not
-demonstrated subjective states.
-
-The appropriate public description is:
-
-> TATARUS is an experimental persistent synthetic nervous system for AI
-> whose documented functions have been causally evaluated in bounded
-> synthetic tasks.
+Infrastructure failures were also preserved. A run paused safely at 16/30
+when an RMX3472 replaced the registered RMX3853, preventing mixed-device
+latency data. Android Asset Packaging renamed the first `.json.gz` winner
+asset and caused a reproducible import failure. A neutral `.snapshot` asset,
+clean build, hash check, topology check, and import test corrected it.
 
 <div align="right"><sub>Page 27 of 30</sub></div>
 <div style="page-break-after: always;"></div>
 
 <!-- PAGE 28/30 -->
 
-## Open Science and Independent Replication
+## Complete Comparative Trial Through 10,000 Rounds
 
-Version 1.0.0 is published under Apache 2.0. Source code, UI documentation,
-experimental plans, raw metrics, negative results, and frozen reports are
-included in the repository. Large binary snapshots are not stored in Git
-because of their size, but the runs can regenerate them.
+Every model family received the same 128-dimensional information space,
+action space, reward, and checkpoints. Learning curves were evaluated after
+250, 500, 1,000, 2,000, 5,000, and 10,000 environmental rounds. Five
+development seeds were run per checkpoint; winner selection and final
+replication used separate seeds. Holdout game win rate was the primary
+metric. Token balance, round win rate, decision time, and state integrity
+were secondary metrics.
 
-The stage-23 package contains:
+| Model | 250 | 500 | 1,000 | 2,000 | 5,000 | 10,000 |
+|---|---:|---:|---:|---:|---:|---:|
+| TATARUS LargeScale | 65% | 64% | 76% | 70% | 76% | **81%** |
+| Contextual Bandit | 60% | 58% | 57% | 59% | 59% | **65%** |
+| DQN | 74% | 60% | 66% | 69% | 52% | **62%** |
+| PPO | 63% | 56% | 55% | 62% | 57% | **59%** |
+| GRU | 52% | 68% | 67% | 60% | 55% | **56%** |
+| MLP | 62% | 64% | 63% | 57% | 55% | **55%** |
 
-- 24 new seeds reserved for external use,
-- clean-build and complete-run scripts,
-- expected reference values,
-- hardware and compiler protocol,
-- hash manifest.
+The table reports means from the complete five-seed learning curves, not the
+subsequently selected individual winner. TATARUS completed all 30 planned
+runs. At 10,000 rounds its 95% Wilson interval was 75–86%, mean token balance
+was (+6.45), and recorded mean decision time was 148.18 ms.
 
-```mermaid
-flowchart LR
-    C["clean checkout"] --> B["build on machine 2"]
-    B --> S["independent seeds"]
-    S --> R["run stages 18–23"]
-    R --> H["hashes, hardware, raw values"]
-    H --> V["compare without parameter adaptation"]
-```
+Selection was frozen within each architecture group:
 
-The local package rerun passed but is not an independent replication. The
-status remains `package_ready_external_run_pending` until a second machine
-with documented hardware and a clean build reproduces the criteria.
+$$
+m^*=\arg\max_m\;\mathrm{SelectionHoldout}(m).
+$$
 
-Recommended citation metadata is provided in `CITATION.cff`. Replication
-deviations should be published as results rather than hidden by post hoc
-parameter selection.
+Learning was then disabled and only the exported artifact ran on untouched
+seeds. TATARUS seed 20260732 at the 10,000-round checkpoint won its selection;
+the contextual bandit with seed 20260731 won the conventional group. DQN was
+strong early but degraded later; GRU and MLP were also non-monotonic. The
+protocol therefore did not silently replace the final checkpoint with the
+best intermediate value.
+
+Numeric seed labels define the same experimental ranges in Kotlin and Python,
+but different random-number generators do not produce bit-identical episodes.
+The comparison is distribution-symmetric, not strictly paired.
 
 <div align="right"><sub>Page 28 of 30</sub></div>
 <div style="page-break-after: always;"></div>
 
 <!-- PAGE 29/30 -->
 
-## Research Program Beyond Version 1.0
+## Frozen Winners and Independent-Seed Run
 
-The next evidence stage should prioritize reach over further mechanism
-accumulation:
+The TATARUS candidate won selection on 20 separate holdout seeds with 18/20
+games (90%), a (+7.75) token balance, and a 63.073% round win rate. Its
+export has SHA-256
+`98c5671ebfcf64734d4d791e324543a727549b6c2a6aad53db78f445e4f71668`.
+A separate Android app loads this state from scratch at every process start,
+locks training, reset, and mode changes, and verifies hash and topology.
 
-1. **External replication:** clean build on a different CPU/GPU and OS
-   configuration.
-2. **G6 transfer:** a structurally new world family without post hoc
-   mechanism or parameter selection.
-3. **Long-duration trials:** substantially longer lifecycles measuring
-   assembly drift, forgetting, and interference.
-4. **Open raw streams:** continuous audio, visual, and byte events with
-   predefined boundary and prediction criteria.
-5. **Repair breadth:** multiple lost functions, competing replacement paths,
-   and recovery cost.
-6. **Acceleration:** differentially tested OpenCL paths for plasticity,
-   assembly, and structure.
-7. **Comparative systems:** external SNN, reservoir, RL, and memory baselines
-   with matched information and compute budgets.
+On previously untouched seeds 60000–60049:
 
-A suitable multiobjective measure is:
+| Frozen winner | Wins | Losses | Rate | Token balance | Round win rate |
+|---|---:|---:|---:|---:|---:|
+| TATARUS LargeScale | 35 | 15 | **70%** | +6.50 | 60.633% |
+| Contextual Bandit | 30 | 20 | **60%** | +2.52 | 53.262% |
+
+TATARUS state remained unchanged during replication and learning was
+disabled. This is a genuine frozen-winner test, not continued online
+training. The observed difference is
 
 $$
-J=
-\mathrm{TaskScore}
--\lambda_s\,\mathrm{SpikeCost}
--\lambda_e\,\mathrm{Interference}
-+\lambda_r\,\mathrm{Robustness}
-+\lambda_x\,\mathrm{Reproducibility}.
+\Delta\hat p=0.70-0.60=0.10.
 $$
 
-The next advance should not be the largest positive number, but a narrower
-causal claim that survives untouched data and external hardware.
+Statistical interpretation prevents overclaiming:
+
+- TATARUS Wilson 95% CI: 56.25–80.90%,
+- contextual-bandit Wilson 95% CI: 46.18–72.39%,
+- Newcombe 95% CI for the difference: −8.51 to +27.60 percentage points,
+- two-sided Fisher exact test: (p=0.4019).
+
+The result is therefore a **numerical advantage reproduced on untouched
+seeds**, not statistically confirmed superiority. More replication seeds and
+preferably bit-identical paired episodes are needed for a narrower difference
+interval.
+
+Efficiency comparisons remain separate. TATARUS was measured in an
+Android/Kotlin path at approximately 144 ms per decision and the bandit in a
+Python path at approximately 0.01 ms. These are real implementation times,
+but differing hardware, runtime, instrumentation, and state richness prevent
+an isolated architecture-speed claim. Export sizes of 1,564,970 bytes versus
+1,504 bytes are likewise not semantically equivalent.
 
 <div align="right"><sub>Page 29 of 30</sub></div>
 <div style="page-break-after: always;"></div>
 
 <!-- PAGE 30/30 -->
 
-## Conclusion and References
+## Conclusion, Limitations, Open Science, and References
 
 TATARUS demonstrates that an artificial agent can use a persistent,
-multiscale, and behaviorally effective nervous state as its own
-computational substrate. The published release connects neurodynamic state,
-local synaptic memory, regulation, assembly formation, bounded planning
-coupling, closed-loop interaction, and structural repair in a
-deterministically testable C++ system.
+multiscale, behaviorally effective nervous state as its own computational
+substrate and learn a policy in a mobile interactive environment. The
+published state connects neurodynamic variables, local synaptic memory,
+regulation, assembly formation, bounded planning coupling, closed-loop
+interaction, and structural repair. In the symmetric Runenkrieg benchmark,
+the frozen winner reached 70% on untouched seeds versus 60% for the best
+conventional winner.
 
-Its scientific value also lies in its limits: the specific kernel geometry
-is not universally superior, the largest configuration is not real-time,
-the worlds are synthetic, and external replication remains pending. This
-separation makes the architecture testable.
+The correct claim boundary nevertheless remains:
+
+> TATARUS is an experimental persistent synthetic nervous system for AI. It
+> showed learning- and action-relevant state in the documented synthetic
+> tasks and the Runenkrieg laboratory, plus a numerical comparative advantage
+> that is not yet statistically significant.
+
+Consciousness, biological equivalence, general intelligence, universal
+kernel or system superiority, real-time operation of the 65,536-neuron
+configuration, and second-hardware replication are not established. The
+next decisive trial requires preregistered bit-identical paired episodes,
+more replication seeds, common hardware/runtime instrumentation, and tests
+after rule changes and retention intervals.
+
+Source code, raw metrics, learning curves, selection reports, negative
+results, frozen exports, and Android integrations are published under Apache
+2.0. Large reproducible binary snapshots remain outside Git due to size.
+Replication deviations should be retained as results rather than hidden by
+post hoc parameter selection.
 
 ### Primary TATARUS Artifacts
 
@@ -1150,6 +1226,9 @@ separation makes the architecture testable.
 - [Stages 17/18](research/ag_signal_morpher_1ee27305a6aa/17_autonomous_representation/README.md)
 - [Cognitive Bridge](research/ag_signal_morpher_1ee27305a6aa/19_persistent_ai_bridge/README.md)
 - [Stages 20–23](research/ag_signal_morpher_1ee27305a6aa/20_23_validation/README.md)
+- [Runenkrieg comparative report](RUNENKRIEG_VERGLEICHSBERICHT.md)
+- [TATARUS 10k statistics](Runenkrieg_Tatarus_10k_Benchmark/results_full/STATISTICAL_REPORT.md)
+- [Conventional 10k statistics](Runenkrieg_TensorFlow_Benchmark/results_full/STATISTICAL_REPORT.md)
 
 ### Scientific Context
 
