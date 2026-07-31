@@ -1,0 +1,12 @@
+.venv/
+results_quick/
+results_quick_multiseed/
+exports_quick/
+results_full/models/
+results_full/adaptation/
+runtime_logs/
+.venv_win/
+__pycache__/
+*.pyc
+*.h5
+*.npz

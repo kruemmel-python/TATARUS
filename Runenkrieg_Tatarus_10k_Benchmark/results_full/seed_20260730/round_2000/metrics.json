@@ -1,0 +1,23 @@
+{
+  "agent": "tatarus_large_scale",
+  "seed": 20260730,
+  "environment_rounds": 2000,
+  "evaluation_games": 20,
+  "holdout_seed_first": 30000,
+  "holdout_seed_last": 30019,
+  "game_win_rate": 0.75,
+  "game_draw_rate": 0,
+  "round_win_rate": 0.5986733001658375,
+  "round_draw_rate": 0.006633499170812604,
+  "mean_token_swing": 6.3,
+  "decision_ms": 148.7700335588723,
+  "spikes_per_game": 3078.9,
+  "transmissions_per_game": 98524.8,
+  "energy_cost_per_game": 84.36186000000001,
+  "training_cpu_seconds": 292.325687629,
+  "training_wall_seconds": 304.595438373,
+  "parameter_bytes": 1471802,
+  "neural_state_bytes_estimate": 2301952,
+  "model_seed": 20260730,
+  "snapshot": "tatarus_seed_20260730_round_2000.json.gz"
+}

@@ -1,0 +1,19 @@
+{
+  "protocol": "RUNENKRIEG-TATARUS-MULTISEED-1",
+  "training_seed": 20260732,
+  "model_seed": 20260732,
+  "checkpoints": [
+    250,
+    500,
+    1000
+  ],
+  "holdout_seeds": [
+    30000,
+    30019
+  ],
+  "learning_disabled_during_holdout": true,
+  "opponent_policy_training": "mixed",
+  "opponent_policy_holdout": "random",
+  "segment_randomization": "seed xor 0x0A11CE xor previous_checkpoint",
+  "completed": false
+}
