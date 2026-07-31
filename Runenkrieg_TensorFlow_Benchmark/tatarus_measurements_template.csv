@@ -1,0 +1,7 @@
+agent,seed,environment_rounds,training_cpu_seconds,parameter_bytes,history_sensitivity,round_win_rate,round_draw_rate,game_win_rate,game_draw_rate,mean_reward,mean_token_swing,decision_ms,decision_p95_ms,rule_switch_win_rate_before_adaptation,retention_action_equal
+tatarus_large,20260730,250,,,,,,,,,,,
+tatarus_large,20260730,500,,,,,,,,,,,
+tatarus_large,20260730,1000,,,,,,,,,,,
+tatarus_large,20260730,2000,,,,,,,,,,,
+tatarus_large,20260730,5000,,,,,,,,,,,
+tatarus_large,20260730,10000,,,,,,,,,,,

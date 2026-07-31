@@ -41,6 +41,47 @@ Einstieg:
 - [wissenschaftliches Whitepaper](Runenkrieg_Tatarus/Whitepaper_TATARUS_Runenkrieg_DE.md)
 - [technische TATARUS-Runenkrieg-Dokumentation](Runenkrieg_Tatarus/Tatarus_Runenkrieg_Dokumentation.md)
 
+### Experimenteller LargeScale-Zweig
+
+[`Runenkrieg_Tatarus_LargeScale`](Runenkrieg_Tatarus_LargeScale) bewahrt
+die veröffentlichte 72/432/32-Fassung als Referenz und untersucht separat
+eine mobile Skalierung auf 1.024 Neuronen, 32.768 rekurrente Synapsen,
+128 vollständig verdrahtete Eingabekanäle und 1.024 afferente
+Eingangsprojektionen. Der Zweig besitzt eine eigene Android-App-ID, flache
+Snapshots, gzip-Dateipersistenz, einen 80-dimensionalen Readout und
+vollständiges Mehr­runden-Selbsttraining.
+
+Die strategische Überlegenheit ist noch keine bestätigte Tatsache. Das
+[vorregistrierte Protokoll](Runenkrieg_Tatarus_LargeScale/LARGESCALE_FORSCHUNGSPROTOKOLL.md)
+definiert Holdout-, Baseline- und Replikationsbedingungen, unter denen eine
+solche Aussage geprüft werden darf.
+
+### TensorFlow-Kontrollarchitekturen
+
+[`Runenkrieg_TensorFlow_Benchmark`](Runenkrieg_TensorFlow_Benchmark)
+stellt TATARUS unter identischen 128-Kanal-, Aktions-, Reward- und
+Seedbedingungen einem MLP, einer GRU, DQN, PPO und einem Contextual Bandit
+gegenüber. Das Labor misst Lernkurven bei 250 bis 10.000 beobachteten
+Umweltrunden, Entscheidungslatenz, CPU-/Parameterspeicher, Retention,
+Geschichtsabhängigkeit und Anpassung nach einem unangekündigten
+Regelwechsel.
+
+### Symmetrischer TATARUS-10k-Benchmark
+
+[`Runenkrieg_Tatarus_10k_Benchmark`](Runenkrieg_Tatarus_10k_Benchmark)
+trainiert fünf unabhängige TATARUS-LargeScale-Modelle unter demselben
+Checkpoint- und Holdoutschema bis 10.000 Runden. Erst der
+vorregistriert ausgewählte und anschließend unabhängig replizierte
+TATARUS-Snapshot darf in die getrennte Vergleichs-APK übernommen werden.
+
+Der Lauf ist mit 30 von 30 Checkpoints abgeschlossen. Die mittlere
+Partiensiegrate der fünf Modelle beträgt am 10.000er-Punkt 81 %
+(95-%-Bootstrapintervall 75–86 %). Seed `20260732` wurde vorregistriert
+ausgewählt und erzielte auf den unberührten Replikationsseeds 60000–60049
+35/50 Siege = 70 %. Der vollständige
+[Laufstatus](Runenkrieg_Tatarus_10k_Benchmark/RUN_STATUS.md) trennt
+Auswahl-Holdout und unabhängige Replikation ausdrücklich.
+
 ## Bestätigtes persistentes Endsystem
 
 Forschungsstufe 16 ergänzt das bisherige Versuchsnetz um einen dauerhaft
@@ -249,3 +290,19 @@ Eligibility-Zeiten, Eligibility-Memory und Interaktionsprodukte sind jetzt
 in der nativen UI verfügbar. **Delayed-XOR Einzelablationen** vergleicht
 Vollmodell, Dendrit aus, Eligibility aus, Produkte aus und Vorzeichengate auf
 identischen Seeds und zeigt den erzeugten Bericht direkt in der UI.
+## Runenkrieg-Vergleichsexperimente
+
+- `Runenkrieg_Tatarus_LargeScale`: skaliertes persistentes TATARUS-System
+  mit 1.024 Neuronen, 32.768 Synapsen und 128 Eingabekanälen.
+- `Runenkrieg_TensorFlow_Benchmark`: vorregistrierte Mehrseed-Lernkurven
+  für MLP, GRU, DQN, PPO und Contextual Bandit bis 10.000 Runden.
+- `Runenkrieg_TensorFlow_Winner_Android`: getrennte Android-App für den
+  eingefrorenen konventionellen Gewinner.
+- `Runenkrieg_Tatarus_10k_Benchmark`: vorregistrierter, gerätenativer
+  Gegenlauf für fünf unabhängige TATARUS-Modelle; 30/30 Checkpoints und
+  unabhängige Replikation abgeschlossen.
+- `Runenkrieg_Tatarus_Winner_Android`: getrennte Android-App mit dem
+  eingefrorenen und hash-identifizierten TATARUS-Gewinner aus 10.000 Runden.
+
+Die gemeinsame, bewusst zurückhaltende Einordnung steht in
+[`RUNENKRIEG_VERGLEICHSBERICHT.md`](RUNENKRIEG_VERGLEICHSBERICHT.md).
