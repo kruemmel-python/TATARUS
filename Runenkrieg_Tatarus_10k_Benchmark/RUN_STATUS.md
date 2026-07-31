@@ -2,8 +2,9 @@
 
 Stand: 31. Juli 2026
 
-Der vorregistrierte Mehrseed-Lauf ist implementiert, getestet und
-checkpointweise fortsetzbar. Er ist noch nicht abgeschlossen.
+Der vorregistrierte, gerätenative Mehrseed-Lauf ist vollständig
+abgeschlossen. Alle Ergebnisse wurden auf demselben registrierten Gerät
+`RMX3853` mit ADB-Seriennummer `4c90bfcc` erzeugt.
 
 ## Bestätigte Checkpoints
 
@@ -12,36 +13,53 @@ checkpointweise fortsetzbar. Er ist noch nicht abgeschlossen.
 | 250 | 5/5 |
 | 500 | 5/5 |
 | 1.000 | 5/5 |
-| 2.000 | 1/5 |
-| 5.000 | 0/5 |
-| 10.000 | 0/5 |
+| 2.000 | 5/5 |
+| 5.000 | 5/5 |
+| 10.000 | 5/5 |
 
-Damit sind 16 von 30 geplanten Lernkurvenpunkten vollständig geschrieben,
+Damit sind 30 von 30 geplanten Lernkurvenpunkten vollständig geschrieben,
 vom Gerät gezogen und lokal gesichert.
 
-## Sicherer Abbruch
+## Mehrseed-Lernkurve
 
-Der Lauf begann auf:
+| Runden | mittlere Partiensiegrate | 95-%-Bootstrapintervall |
+|---:|---:|---:|
+| 250 | 65 % | 54–74 % |
+| 500 | 64 % | 56–71 % |
+| 1.000 | 76 % | 69–82 % |
+| 2.000 | 70 % | 66–74 % |
+| 5.000 | 76 % | 66–84 % |
+| 10.000 | 81 % | 75–86 % |
 
-- Modell: `RMX3853`
-- ADB-Seriennummer: `4c90bfcc`
+## Vorregistrierter Gewinner
 
-Während `Seed 20260731 / Checkpoint 2.000` wurde dieses Smartphone durch
-ein anderes Gerät ersetzt:
+Nach der vorab festgelegten Reihenfolge wurde Seed `20260732` ausgewählt:
 
-- Modell: `RMX3472`
-- ADB-Seriennummer: `1dd6e851`
+- Auswahl-Holdout Seeds 30000–30019: 18/20 Siege = 90 %,
+- mittlere Token-Differenz: +7,75,
+- mittlere Entscheidungszeit: 148,982 ms,
+- Snapshot-SHA-256:
+  `98c5671ebfcf64734d4d791e324543a727549b6c2a6aad53db78f445e4f71668`.
 
-Der Orchestrator stoppte daraufhin. Die Ergebnisse werden nicht über
-verschiedene Geräte hinweg als eine gemeinsame Latenz- oder Thermalmessung
-fortgeschrieben.
+## Unabhängige Replikation
 
-## Fortsetzung
+Der unveränderte Gewinner wurde anschließend einmalig und lernfrei auf den
+zuvor unberührten Seeds 60000–60049 geprüft:
 
-Nach Wiederanschluss des registrierten `RMX3853` kann
-`run_full_benchmark.ps1 -Resume` den letzten bestätigten Snapshot jedes
-Seeds zurückspielen und ohne doppelt gezählte Trainingsrunden fortfahren.
+- 35/50 Siege = 70 %,
+- 0 Unentschieden und 15 Niederlagen,
+- mittlere Token-Differenz: +6,50,
+- mittlere Rundensiegrate: 60,63 %,
+- mittlere Entscheidungszeit: 144,238 ms,
+- vollständiger Modellzustand nach der Evaluation unverändert.
 
-Bis zum vollständigen 10.000er-Lauf, der vorregistrierten Auswahl und der
-unabhängigen Replikation darf kein TATARUS-Snapshot als endgültiger
-mobiler Gewinner bezeichnet werden.
+Die 70 % sind der stärkere Generalisierungsnachweis. Die 90 % des
+Auswahl-Holdouts werden nicht als unabhängige Leistung interpretiert.
+
+## Getrennte Gewinner-App
+
+Der replizierte Snapshot wurde in
+`Runenkrieg_Tatarus_Winner_Android` mit eigener Paket-ID übernommen.
+Training, Moduswechsel und Zurücksetzen sind dort gesperrt. Asset-Hash,
+Topologie, Trainingsstand und lernfreie Zustandsidentität wurden auf dem
+Smartphone per Instrumentierungstest bestätigt.

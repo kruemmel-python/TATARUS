@@ -6,8 +6,13 @@ unverändert erhalten.
 
 Das vorregistrierte Design steht in
 [`EXPERIMENT_PROTOCOL.md`](EXPERIMENT_PROTOCOL.md).
-Der aktuelle, noch nicht abgeschlossene Gerätestand steht in
+Der vollständig abgeschlossene Gerätestand steht in
 [`RUN_STATUS.md`](RUN_STATUS.md).
+
+Nach dem vollständigen Mehrseed-Lauf erzeugt `analyze_results.py` die
+Lernkurve und wählt den Gewinner ausschließlich nach dem vorregistrierten
+10.000er-Holdout. `run_independent_replication.ps1` bewertet diesen danach
+einmalig und lernfrei auf den unberührten Seeds 60000 bis 60049.
 
 Ein Smoke-Test für einen Seed:
 

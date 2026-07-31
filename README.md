@@ -74,11 +74,13 @@ Checkpoint- und Holdoutschema bis 10.000 Runden. Erst der
 vorregistriert ausgewählte und anschließend unabhängig replizierte
 TATARUS-Snapshot darf in die getrennte Vergleichs-APK übernommen werden.
 
-Der Lauf ist derzeit bei 16 von 30 bestätigten Checkpoints sicher
-pausiert, weil das registrierte Smartphone während der Messung durch ein
-anderes Gerät ersetzt wurde. Der genaue
-[Laufstatus](Runenkrieg_Tatarus_10k_Benchmark/RUN_STATUS.md) verhindert,
-dass Teilergebnisse als abgeschlossene Vergleichsstudie erscheinen.
+Der Lauf ist mit 30 von 30 Checkpoints abgeschlossen. Die mittlere
+Partiensiegrate der fünf Modelle beträgt am 10.000er-Punkt 81 %
+(95-%-Bootstrapintervall 75–86 %). Seed `20260732` wurde vorregistriert
+ausgewählt und erzielte auf den unberührten Replikationsseeds 60000–60049
+35/50 Siege = 70 %. Der vollständige
+[Laufstatus](Runenkrieg_Tatarus_10k_Benchmark/RUN_STATUS.md) trennt
+Auswahl-Holdout und unabhängige Replikation ausdrücklich.
 
 ## Bestätigtes persistentes Endsystem
 
@@ -297,4 +299,10 @@ identischen Seeds und zeigt den erzeugten Bericht direkt in der UI.
 - `Runenkrieg_TensorFlow_Winner_Android`: getrennte Android-App für den
   eingefrorenen konventionellen Gewinner.
 - `Runenkrieg_Tatarus_10k_Benchmark`: vorregistrierter, gerätenativer
-  Gegenlauf für fünf unabhängige TATARUS-Modelle; aktuell noch laufend.
+  Gegenlauf für fünf unabhängige TATARUS-Modelle; 30/30 Checkpoints und
+  unabhängige Replikation abgeschlossen.
+- `Runenkrieg_Tatarus_Winner_Android`: getrennte Android-App mit dem
+  eingefrorenen und hash-identifizierten TATARUS-Gewinner aus 10.000 Runden.
+
+Die gemeinsame, bewusst zurückhaltende Einordnung steht in
+[`RUNENKRIEG_VERGLEICHSBERICHT.md`](RUNENKRIEG_VERGLEICHSBERICHT.md).

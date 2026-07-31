@@ -5,7 +5,10 @@
   "checkpoints": [
     250,
     500,
-    1000
+    1000,
+    2000,
+    5000,
+    10000
   ],
   "holdout_seeds": [
     30000,
@@ -15,5 +18,5 @@
   "opponent_policy_training": "mixed",
   "opponent_policy_holdout": "random",
   "segment_randomization": "seed xor 0x0A11CE xor previous_checkpoint",
-  "completed": false
+  "completed": true
 }

@@ -13,6 +13,7 @@ from statistics import mean
 ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results_full"
 EXPORTS = ROOT / "exports"
+REPLICATION = RESULTS / "independent_replication.json"
 SEEDS = (20260730, 20260731, 20260732, 20260733, 20260734)
 CHECKPOINTS = (250, 500, 1000, 2000, 5000, 10000)
 METRICS = (
@@ -216,6 +217,21 @@ def main() -> None:
     EXPORTS.mkdir(exist_ok=True)
     target = EXPORTS / "tatarus_frozen_winner.json.gz"
     shutil.copyfile(source, target)
+    replication = (
+        json.loads(REPLICATION.read_text(encoding="utf-8"))
+        if REPLICATION.exists()
+        else None
+    )
+    if replication is not None:
+        if int(replication["training_seed"]) != winner_seed:
+            raise RuntimeError("Replication seed does not match selected winner")
+        if replication["snapshot_sha256"] != sha256(target):
+            raise RuntimeError("Replication snapshot hash does not match winner")
+        if not replication["learning_disabled"]:
+            raise RuntimeError("Replication was not learning-free")
+        if not replication["state_unchanged_after_evaluation"]:
+            raise RuntimeError("Winner state changed during replication")
+
     metadata = {
         "protocol": "RUNENKRIEG-TATARUS-MULTISEED-1",
         "agent": "tatarus_large_scale",
@@ -231,7 +247,7 @@ def main() -> None:
         "sha256": sha256(target),
         "bytes": target.stat().st_size,
         "learning_on_android": False,
-        "independent_replication": None,
+        "independent_replication": replication,
     }
     (EXPORTS / "tatarus_frozen_winner.json").write_text(
         json.dumps(metadata, indent=2),
@@ -265,8 +281,15 @@ def main() -> None:
             f"Vorregistriert ausgewählt: Seed **{winner_seed}** am "
             "10.000er-Checkpoint.",
             "",
-            "Die unabhängige Replikation auf Seeds 60000–60049 wird erst "
-            "nach dieser Auswahl eingetragen.",
+            (
+                "Unabhängige Replikation auf Seeds 60000–60049: "
+                f"**{replication['game_win_rate']:.1%}** Partiensiegrate, "
+                f"Token-Differenz **{replication['mean_token_swing']:.2f}**, "
+                "Modellzustand unverändert."
+                if replication is not None
+                else "Die unabhängige Replikation auf Seeds 60000–60049 "
+                "wird erst nach dieser Auswahl eingetragen."
+            ),
         ]
     )
     (RESULTS / "STATISTICAL_REPORT.md").write_text(
