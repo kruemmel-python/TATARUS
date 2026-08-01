@@ -1,0 +1,130 @@
+{
+  "protocol": "TATARUS-PUBLICATION-REPRO-1",
+  "entries": [
+    {
+      "path": "analysis/RUNENKRIEG_VERGLEICHSBERICHT.md",
+      "bytes": 3117,
+      "sha256": "ab5836bfeaaced917d96855cc1b2076cac6122592d827744b2e067b9c0033051"
+    },
+    {
+      "path": "analysis/TATARUS_LLM_ARCHITECTURE.md",
+      "bytes": 10219,
+      "sha256": "59e8f72818d9f9b177810deade96879630c7b8e04de0ed5da9ba837415fb0af8"
+    },
+    {
+      "path": "config/tatarus_llm.example.json",
+      "bytes": 1153,
+      "sha256": "a1409f4b0369c990084d43234581ac6405126e57ec169910856fa86d39e63604"
+    },
+    {
+      "path": "figures/architecture.png",
+      "bytes": 74847,
+      "sha256": "6925938a9248f03d9d4a69155c9869ee7737e74a145a36e71c7077f0efba6f48"
+    },
+    {
+      "path": "figures/frozen_replication.png",
+      "bytes": 52810,
+      "sha256": "c9cd7ba86cb80a1aa25c1fb1f7e0a3aca61c90fb186d55de2f8e0534dcee7765"
+    },
+    {
+      "path": "figures/learning_curves.png",
+      "bytes": 49165,
+      "sha256": "ca97978c7f16d8583f5d6b1e08a769ad7912ec90c9a2e9b90814ee1e03f83b1a"
+    },
+    {
+      "path": "figures/tsmemv3_causality.png",
+      "bytes": 49645,
+      "sha256": "6eff3321737c7278b1c9358e3ad70ea0c42d430a3eafc62dac3745408c63ea36"
+    },
+    {
+      "path": "protocols/RUNENKRIEG_TATARUS_PROTOCOL.md",
+      "bytes": 2646,
+      "sha256": "804af31f14011acb00c50155d976dd72b33dc491e08101fca943a8e14bf975f0"
+    },
+    {
+      "path": "protocols/RUNENKRIEG_TF_PROTOCOL.md",
+      "bytes": 2365,
+      "sha256": "9f68f794b215101ffc168c5bdca2b7634b936fc1b7f135861bb9ce2def911b14"
+    },
+    {
+      "path": "protocols/TATARUS_LLM_EXPERIMENT_PROTOCOL.md",
+      "bytes": 8135,
+      "sha256": "057b51fed22195d06594a522c68da7eb8473f7b150bd693a9ebd56fe63201aa9"
+    },
+    {
+      "path": "raw_results/stage11_summary.json",
+      "bytes": 3117,
+      "sha256": "69457c06e5b340d4f75e29f85dc11c03ae09c4a6022766fd814c290f295b935c"
+    },
+    {
+      "path": "raw_results/stage12_delayed_xor_summary.json",
+      "bytes": 2347,
+      "sha256": "d1eb12eab14c0b028cba4f6b9a0c98362c3b01dfee334503546cd348f58da70d"
+    },
+    {
+      "path": "raw_results/stage13_holdout_summary.json",
+      "bytes": 1929,
+      "sha256": "2fc388bfeeb82d40bb5d6136d9c3c899153a6d24fb2eaab06b0e07929a755ac9"
+    },
+    {
+      "path": "raw_results/stage18_confirmation.json",
+      "bytes": 207,
+      "sha256": "18d7de368661b929fc4f7d09cb43501ca6fd5a76d39ff4c63e3754284cc2d232"
+    },
+    {
+      "path": "raw_results/stage19_results.json",
+      "bytes": 170,
+      "sha256": "215046a1f206ab920d7f0e87799511b65242f32233349c9822ab5907382f3d19"
+    },
+    {
+      "path": "raw_results/stage20_23_results.json",
+      "bytes": 191,
+      "sha256": "1819819125b935cdbe4e76e3ba02aec17dfaa0b497b63fadc16153eddbd222c7"
+    },
+    {
+      "path": "raw_results/tatarus_independent_replication.json",
+      "bytes": 678,
+      "sha256": "8ae2c81e5dbec0a7da2a2471784cf570bdd5cea63cd91b3f11b1db9eb88da67e"
+    },
+    {
+      "path": "raw_results/tatarus_learning_curves.csv",
+      "bytes": 2868,
+      "sha256": "c98b10bb5376ade1d6e64c93c50f5ac6b05581550d32cf6ceb1b5598a10140e1"
+    },
+    {
+      "path": "raw_results/tensorflow_learning_curves.csv",
+      "bytes": 8667,
+      "sha256": "d404a5c98bf60943c38dcb90c93ee90a8ea4cd7145f6fec0a6ad9a965e39301e"
+    },
+    {
+      "path": "raw_results/tensorflow_winner.json",
+      "bytes": 2346,
+      "sha256": "80f2c2c32d9ea264380dcb1f6dff2d1301bd8413e5cc3dfd7bf6abbd0ca3fdfd"
+    },
+    {
+      "path": "README_REPRODUCTION.md",
+      "bytes": 798,
+      "sha256": "b3a408ae29390536077ac2378d5fcd1dcc0ac550af7f3f75bd15f125dfcc0b6f"
+    },
+    {
+      "path": "snapshot_hashes/tatarus_frozen_winner.json",
+      "bytes": 1968,
+      "sha256": "60ee73dd1a3c04ddd60d329f8c44714bc12cff8ba5b3a6fa6e3b10c54052ba77"
+    },
+    {
+      "path": "snapshot_hashes/tensorflow_frozen_winner.json",
+      "bytes": 799,
+      "sha256": "72645b08c14a54c99e0f70b4250de81d3ef915e7d36a677a255ff868eb095f73"
+    },
+    {
+      "path": "source/SOURCE_MANIFEST.txt",
+      "bytes": 436,
+      "sha256": "36503f1b1251a9b0afbe4b48d61f810573edcfcc938cd8bef5ee0baaa8790fa2"
+    },
+    {
+      "path": "tests/TATARUS_LLM_TRACEABILITY.md",
+      "bytes": 4131,
+      "sha256": "9bcd1da879ac65f6b49c12c392b7c6d20e5ea376678dd76868e190823b17024c"
+    }
+  ]
+}

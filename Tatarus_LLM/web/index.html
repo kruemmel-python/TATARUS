@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Lokale Chatoberfläche für TATARUS und einen austauschbaren LLM-Kortex.">
+  <title>TATARUS · Neural Chat</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="app-shell">
+    <aside class="left-rail" aria-label="TATARUS Systemstatus">
+      <a class="brand" href="/" aria-label="TATARUS Startseite">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44"><path d="M22 4c-7 0-12 5-12 11v2c-3 2-5 5-5 9 0 6 5 11 11 11h12c6 0 11-5 11-11 0-4-2-7-5-9v-2c0-6-5-11-12-11Z"/><path d="M15 16c4-4 10-4 14 0M13 24c5-3 13-3 18 0M17 31c3-2 7-2 10 0"/></svg>
+        </span>
+        <span><strong>TATARUS</strong><small>Persistent Synthetic Nervous System</small></span>
+      </a>
+
+      <section class="system-card status-card" aria-labelledby="system-title">
+        <div class="section-heading"><span id="system-title">System</span><span class="status-pill" id="connection-pill"><i></i><b>Verbinde</b></span></div>
+        <dl class="compact-list">
+          <div><dt>Provider</dt><dd id="provider-value">–</dd></div>
+          <div><dt>LLM-Kortex</dt><dd id="model-value">–</dd></div>
+          <div><dt>Gedächtnis</dt><dd id="memory-owner-value">–</dd></div>
+        </dl>
+      </section>
+
+      <section class="system-card" aria-labelledby="nervous-title">
+        <div class="section-heading"><span id="nervous-title">Nervenzustand</span><span class="mono" id="step-value">#0</span></div>
+        <div class="meter-row">
+          <div class="meter-label"><span>Konfidenz</span><b id="confidence-value">0 %</b></div>
+          <div class="meter"><i id="confidence-meter"></i></div>
+        </div>
+        <div class="meter-row">
+          <div class="meter-label"><span>Salienz</span><b id="salience-value">0 %</b></div>
+          <div class="meter"><i id="salience-meter"></i></div>
+        </div>
+        <div class="meter-row">
+          <div class="meter-label"><span>Neuheit</span><b id="novelty-value">0 %</b></div>
+          <div class="meter amber"><i id="novelty-meter"></i></div>
+        </div>
+        <div class="fingerprint"><span>Funktionaler Fingerprint</span><code id="fingerprint-value">–</code></div>
+      </section>
+
+      <section class="system-card memory-card" aria-labelledby="memory-title">
+        <div class="section-heading"><span id="memory-title">Synaptisches Gedächtnis</span><span class="pulse-icon" aria-hidden="true"></span></div>
+        <div class="stat-grid">
+          <div><strong id="episodes-value">0</strong><span>Episoden</span></div>
+          <div><strong id="synapses-value">0</strong><span>Synapsen</span></div>
+          <div><strong id="spikes-value">0</strong><span>Recall-Spikes</span></div>
+          <div><strong id="plasticity-value">0</strong><span>Plastizität</span></div>
+        </div>
+      </section>
+
+      <div class="rail-actions">
+        <button class="text-button" id="save-button" type="button">Snapshot speichern</button>
+        <button class="text-button" id="load-button" type="button">Snapshot laden</button>
+      </div>
+    </aside>
+
+    <main class="chat-stage">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">LOKALER KOGNITIVER REGELKREIS</p>
+          <h1>Neural Chat</h1>
+        </div>
+        <div class="topbar-state"><span class="live-dot"></span><span id="topbar-label">TATARUS wird initialisiert</span></div>
+      </header>
+
+      <section class="conversation" id="conversation" aria-live="polite" aria-label="Chatverlauf">
+        <article class="welcome-card">
+          <div class="welcome-orbit" aria-hidden="true"><i></i><i></i><i></i><b>T</b></div>
+          <p class="eyebrow">TATARUS + AUSTAUSCHBARER LLM-KORTEX</p>
+          <h2>Ein Gespräch mit fortgesetztem Nervenzustand.</h2>
+          <p>Jede Nachricht durchläuft Planung, neuronale Verarbeitung, Umweltfolge und synaptische Speicherung. Das LLM formuliert Sprache – TATARUS trägt den dauerhaften Zustand.</p>
+          <div class="starter-grid" aria-label="Beispielnachrichten">
+            <button type="button" data-prompt="Was nimmst du in deinem aktuellen Zustand wahr?">Aktuellen Zustand beschreiben <span>→</span></button>
+            <button type="button" data-prompt="Erinnere dich an unser bisher wichtigstes Thema und sage klar, worauf du dich stützt.">Neuronalen Recall prüfen <span>→</span></button>
+            <button type="button" data-prompt="Plane den nächsten vorsichtigen Schritt und erkläre anschließend knapp das Ergebnis.">Handlungszyklus auslösen <span>→</span></button>
+          </div>
+        </article>
+      </section>
+
+      <section class="composer-wrap" aria-label="Nachricht senden">
+        <div class="composer">
+          <textarea id="message-input" rows="1" maxlength="65536" placeholder="Mit TATARUS sprechen …" aria-label="Nachricht an TATARUS"></textarea>
+          <button id="send-button" type="button" aria-label="Nachricht senden">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 15-8-5 16-3-6-7-2Z"/><path d="m11 14 8-10"/></svg>
+          </button>
+        </div>
+        <div class="composer-meta"><span><kbd>Strg</kbd> + <kbd>Enter</kbd> senden</span><span>Verlauf nur in dieser Browseransicht · nicht als versteckter LLM-Kontext</span></div>
+      </section>
+    </main>
+
+    <aside class="right-rail" aria-label="Forschungsdiagnostik">
+      <section class="inspector-head">
+        <div><p class="eyebrow">LIVE-DIAGNOSTIK</p><h2>Neuronaler Zyklus</h2></div>
+        <button class="icon-button" id="clear-button" type="button" title="Nur sichtbaren Chat leeren" aria-label="Sichtbaren Chat leeren">×</button>
+      </section>
+
+      <ol class="cycle-list" aria-label="Verarbeitungsschritte">
+        <li class="active"><i>01</i><div><b>Sensorische Kodierung</b><span>UTF-8 → Ereignisstrom</span></div></li>
+        <li><i>02</i><div><b>LLM-Planung</b><span id="planning-latency">bereit</span></div></li>
+        <li><i>03</i><div><b>TATARUS-Schritt</b><span>Spikes · Assemblies · Handlung</span></div></li>
+        <li><i>04</i><div><b>Sprachformulierung</b><span id="language-latency">bereit</span></div></li>
+        <li><i>05</i><div><b>Lokale Plastizität</b><span>Hebb · STDP · Eligibility</span></div></li>
+      </ol>
+
+      <section class="diagnostic-card">
+        <div class="section-heading"><span>Letztes Kommando</span><span id="attention-chip" class="mini-chip">balanced</span></div>
+        <dl class="command-grid">
+          <div><dt>Intent</dt><dd id="intent-value">0.00</dd></div>
+          <div><dt>Stärke</dt><dd id="intent-strength-value">0.00</dd></div>
+          <div><dt>Recall-Cue</dt><dd id="recall-cue-value">0</dd></div>
+          <div><dt>Recall</dt><dd id="recall-strength-value">0.00</dd></div>
+          <div class="reward"><dt>Umwelt-Reward</dt><dd id="reward-value">0.00</dd></div>
+        </dl>
+      </section>
+
+      <section class="diagnostic-card">
+        <div class="section-heading"><span>Aktive Repräsentationen</span><span id="representation-count">0</span></div>
+        <div class="representation-list" id="representation-list"><p class="empty-state">Noch keine Aktivität.</p></div>
+      </section>
+
+      <details class="method-note">
+        <summary>Wissenschaftlicher Modus</summary>
+        <p>Der Browser zeigt den Dialog, sendet aber pro Turn nur die neue Nachricht. Dauerhafte Erinnerung stammt im Modus <code>tatarus</code> aus dem neuronalen und synaptischen Snapshot. Reward kommt ausschließlich aus der simulierten Umwelt.</p>
+      </details>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

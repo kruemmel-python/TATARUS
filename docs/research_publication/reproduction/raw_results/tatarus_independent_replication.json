@@ -1,0 +1,21 @@
+{
+  "protocol": "RUNENKRIEG-TATARUS-INDEPENDENT-REPLICATION-1",
+  "training_seed": 20260732,
+  "selection_checkpoint": 10000,
+  "replication_seed_first": 60000,
+  "replication_seed_last": 60049,
+  "games": 50,
+  "wins": 35,
+  "draws": 0,
+  "losses": 15,
+  "game_win_rate": 0.7,
+  "round_win_rate": 0.6063348416289592,
+  "mean_token_swing": 6.5,
+  "decision_ms": 144.23813760723982,
+  "spikes_per_game": 2221.88,
+  "transmissions_per_game": 71100.16,
+  "energy_cost_per_game": 60.879512000000005,
+  "snapshot_sha256": "98c5671ebfcf64734d4d791e324543a727549b6c2a6aad53db78f445e4f71668",
+  "learning_disabled": true,
+  "state_unchanged_after_evaluation": true
+}

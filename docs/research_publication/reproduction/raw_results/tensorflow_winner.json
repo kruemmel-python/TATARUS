@@ -1,0 +1,74 @@
+{
+  "protocol": "RUNENKRIEG-TF-MULTISEED-1",
+  "selection_checkpoint": 10000,
+  "selection_rule": [
+    "highest mean game_win_rate",
+    "highest mean_token_swing",
+    "lowest mean decision_ms",
+    "lexicographic agent name"
+  ],
+  "ranking": [
+    {
+      "agent": "contextual_bandit",
+      "training_seed_count": 5,
+      "mean_game_win_rate": 0.6499999999999999,
+      "game_win_rate_ci95_low": 0.6100000000000001,
+      "game_win_rate_ci95_high": 0.69,
+      "mean_token_swing": 2.4099999999999997,
+      "mean_decision_ms": 0.011507960961232477
+    },
+    {
+      "agent": "dqn",
+      "training_seed_count": 5,
+      "mean_game_win_rate": 0.62,
+      "game_win_rate_ci95_low": 0.5700000000000001,
+      "game_win_rate_ci95_high": 0.67,
+      "mean_token_swing": 3.5799999999999996,
+      "mean_decision_ms": 2.028543093161487
+    },
+    {
+      "agent": "ppo",
+      "training_seed_count": 5,
+      "mean_game_win_rate": 0.5900000000000001,
+      "game_win_rate_ci95_low": 0.5599999999999999,
+      "game_win_rate_ci95_high": 0.62,
+      "mean_token_swing": 1.17,
+      "mean_decision_ms": 2.336674002183648
+    },
+    {
+      "agent": "gru",
+      "training_seed_count": 5,
+      "mean_game_win_rate": 0.5599999999999999,
+      "game_win_rate_ci95_low": 0.53,
+      "game_win_rate_ci95_high": 0.5900000000000001,
+      "mean_token_swing": 0.5299999999999999,
+      "mean_decision_ms": 25.377608896497854
+    },
+    {
+      "agent": "mlp",
+      "training_seed_count": 5,
+      "mean_game_win_rate": 0.55,
+      "game_win_rate_ci95_low": 0.49000000000000005,
+      "game_win_rate_ci95_high": 0.6100000000000001,
+      "mean_token_swing": 1.1300000000000001,
+      "mean_decision_ms": 2.2435153215826986
+    }
+  ],
+  "winner_agent": "contextual_bandit",
+  "winner_training_seed": 20260731,
+  "checkpoint_directory": "results_full/models/seed_20260731/contextual_bandit/round_10000",
+  "independent_replication_seeds": [
+    60000,
+    60049
+  ],
+  "independent_replication": {
+    "round_win_rate": 0.532620320855615,
+    "round_draw_rate": 0.0074866310160427805,
+    "game_win_rate": 0.6,
+    "game_draw_rate": 0.0,
+    "mean_reward": 0.5342245989304814,
+    "mean_token_swing": 2.52,
+    "decision_ms": 0.010137860962566844,
+    "decision_p95_ms": 0.0186
+  }
+}

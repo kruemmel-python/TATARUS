@@ -21,3 +21,6 @@ CMakeCache.txt
 Testing/
 dist/
 *.egg-info/
+
+# Rendered page-by-page publication QA is reproducible and not a release artifact.
+docs/research_publication/qa/

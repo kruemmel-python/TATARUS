@@ -1,0 +1,165 @@
+openapi: 3.1.0
+info:
+  title: TATARUS Local Cognitive Gateway
+  version: 1.1.0
+  description: >-
+    Local demonstration interface for TATARUS with a replaceable LLM cortex.
+    Reward is produced by the environment and cannot be supplied by callers.
+servers:
+  - url: http://127.0.0.1:12401
+paths:
+  /health:
+    get:
+      operationId: getTatarusHealth
+      summary: Read gateway, provider and currently known model status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status, provider, model, memory_owner, web_ui]
+                properties:
+                  status: {type: string}
+                  provider: {type: string}
+                  model: {type: string}
+                  memory_owner: {type: string, enum: [tatarus, hybrid, demo]}
+                  web_ui: {type: boolean}
+  /v1/state:
+    get:
+      operationId: getTatarusCognitiveState
+      summary: Read the privacy-bounded pooled cognitive state
+      responses:
+        "200":
+          description: Current pooled state
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/CognitiveState"}
+  /v1/step:
+    post:
+      operationId: stepTatarus
+      summary: Perform one complete planner-neural-environment step
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [user_input]
+              properties:
+                user_input: {type: string, maxLength: 65536}
+      responses:
+        "200":
+          description: Completed closed-loop step
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [provider, model, planning_latency_ms, response, language_model, language_latency_ms, language_error, command, environment_reward, recalled_episodes, episodic_reconstruction_spikes, episodic_reconstruction_failures, episodic_plasticity_updates, episodic_memory_synapses, cognitive_state]
+                properties:
+                  provider: {type: string}
+                  model: {type: string}
+                  planning_latency_ms: {type: number}
+                  response: {type: string}
+                  language_model: {type: string}
+                  language_latency_ms: {type: number}
+                  language_error: {type: string}
+                  command: {$ref: "#/components/schemas/PlannerCommand"}
+                  environment_reward: {type: number, minimum: -1, maximum: 1}
+                  recalled_episodes:
+                    type: array
+                    items: {$ref: "#/components/schemas/RecalledEpisode"}
+                  episodic_reconstruction_spikes: {type: string}
+                  episodic_reconstruction_failures: {type: string}
+                  episodic_plasticity_updates: {type: string}
+                  episodic_memory_synapses: {type: string}
+                  cognitive_state: {$ref: "#/components/schemas/CognitiveState"}
+  /v1/memory:
+    get:
+      operationId: getTatarusMemoryStatus
+      summary: Read aggregate synaptic-memory counters without content, weights or topology
+      responses:
+        "200":
+          description: Aggregate memory status
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/MemoryStatus"}
+  /v1/save:
+    post:
+      operationId: saveTatarusSnapshot
+      summary: Save nervous system, bridge, environment and synaptic memory atomically to the configured directory
+      responses:
+        "200":
+          description: Snapshot saved
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/SnapshotResult"}
+  /v1/load:
+    post:
+      operationId: loadTatarusSnapshot
+      summary: Replace the active lifecycle state with the configured composite snapshot
+      responses:
+        "200":
+          description: Snapshot loaded
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/SnapshotResult"}
+components:
+  schemas:
+    MemoryStatus:
+      type: object
+      additionalProperties: false
+      required: [memory_owner, episodes, synapses, last_reconstruction_spikes, last_reconstruction_failures, plasticity_updates, state_hash]
+      properties:
+        memory_owner: {type: string, enum: [tatarus, hybrid, demo]}
+        episodes: {type: string}
+        synapses: {type: string}
+        last_reconstruction_spikes: {type: string}
+        last_reconstruction_failures: {type: string}
+        plasticity_updates: {type: string}
+        state_hash: {type: string}
+    SnapshotResult:
+      type: object
+      additionalProperties: false
+      required: [status, path]
+      properties:
+        status: {type: string, enum: [saved, loaded]}
+        path: {type: string}
+    RecalledEpisode:
+      type: object
+      additionalProperties: false
+      required: [memory_id, role, content, retrieval_score, age_steps]
+      properties:
+        memory_id: {type: string}
+        role: {type: string, enum: [user, assistant]}
+        content: {type: string}
+        retrieval_score: {type: number, minimum: 0, maximum: 1}
+        age_steps: {type: string}
+    PlannerCommand:
+      type: object
+      additionalProperties: false
+      required: [attention, motor_intent, intent_strength, recall_cue, recall_strength]
+      properties:
+        attention:
+          type: string
+          enum: [balanced, vision, audio, touch, text, interoception]
+        motor_intent: {type: number, minimum: -1, maximum: 1}
+        intent_strength: {type: number, minimum: 0, maximum: 1}
+        recall_cue: {type: integer, minimum: 0, maximum: 63}
+        recall_strength: {type: number, minimum: 0, maximum: 1}
+    CognitiveState:
+      type: object
+      required: [step, representations, recall, novelty, salience, energy_need, activity_need, prediction_error, confidence, functional_fingerprint]
+      properties:
+        step: {type: string}
+        representations: {type: array, items: {type: object}}
+        recall: {type: array, items: {type: object}}
+        novelty: {type: number}
+        salience: {type: number}
+        energy_need: {type: number}
+        activity_need: {type: number}
+        prediction_error: {type: number}
+        confidence: {type: number}
+        functional_fingerprint: {type: string}

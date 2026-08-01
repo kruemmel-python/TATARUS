@@ -10,8 +10,10 @@ namespace agns {
 namespace {
 
 constexpr std::size_t kRecallGroups = CognitiveBridge::recallGroupCount;
-constexpr std::array<char, 8> kBridgeMagic{
+constexpr std::array<char, 8> kBridgeMagicV1{
     'A', 'G', 'C', 'B', 'V', '1', '\0', '\0'};
+constexpr std::array<char, 8> kBridgeMagicV2{
+    'A', 'G', 'C', 'B', 'V', '2', '\0', '\0'};
 
 template <typename T>
 void writePod(std::ostream& output, const T& value) {
@@ -246,11 +248,33 @@ CognitiveState CognitiveBridge::readState() const {
 void CognitiveBridge::saveState(const std::filesystem::path& path) const {
     std::ofstream output(path, std::ios::binary | std::ios::trunc);
     if (!output) throw std::runtime_error("Bridge-State konnte nicht gespeichert werden");
-    output.write(kBridgeMagic.data(), kBridgeMagic.size());
+    output.write(kBridgeMagicV2.data(), kBridgeMagicV2.size());
     writePod(output, predictedReward_);
     const std::uint64_t count = previousSpikeCounts_.size();
     writePod(output, count);
     for (const auto value : previousSpikeCounts_) writePod(output, value);
+    writePod(output, currentState_.step);
+    const std::uint64_t representationCount = currentState_.activeRepresentations.size();
+    writePod(output, representationCount);
+    for (const auto& representation : currentState_.activeRepresentations) {
+        writePod(output, representation.id);
+        writePod(output, representation.activation);
+        writePod(output, representation.familiarity);
+        writePod(output, representation.ageMs);
+    }
+    const std::uint64_t recallCount = currentState_.recalledStates.size();
+    writePod(output, recallCount);
+    for (const auto& recall : currentState_.recalledStates) {
+        writePod(output, recall.channel);
+        writePod(output, recall.strength);
+    }
+    writePod(output, currentState_.novelty);
+    writePod(output, currentState_.salience);
+    writePod(output, currentState_.energyNeed);
+    writePod(output, currentState_.activityNeed);
+    writePod(output, currentState_.predictionError);
+    writePod(output, currentState_.confidence);
+    writePod(output, currentState_.functionalFingerprint);
     if (!output) throw std::runtime_error("Bridge-State ist unvollständig");
 }
 
@@ -259,7 +283,7 @@ void CognitiveBridge::loadState(const std::filesystem::path& path) {
     if (!input) throw std::runtime_error("Bridge-State konnte nicht geladen werden");
     std::array<char, 8> magic{};
     input.read(magic.data(), magic.size());
-    if (magic != kBridgeMagic) {
+    if (magic != kBridgeMagicV1 && magic != kBridgeMagicV2) {
         throw std::runtime_error("Unbekanntes Cognitive-Bridge-Format");
     }
     readPod(input, predictedReward_);
@@ -270,9 +294,41 @@ void CognitiveBridge::loadState(const std::filesystem::path& path) {
     }
     previousSpikeCounts_.resize(static_cast<std::size_t>(count));
     for (auto& value : previousSpikeCounts_) readPod(input, value);
-    if (!input) throw std::runtime_error("Bridge-State ist beschädigt");
-    currentState_ = CognitiveState{};
-    currentState_.step = nervousSystem_.metrics().step;
+    if (magic == kBridgeMagicV1) {
+        if (!input) throw std::runtime_error("Bridge-State ist beschädigt");
+        currentState_ = CognitiveState{};
+        currentState_.step = nervousSystem_.metrics().step;
+        return;
+    }
+    readPod(input, currentState_.step);
+    std::uint64_t representationCount = 0;
+    readPod(input, representationCount);
+    if (representationCount > 100000U) throw std::runtime_error("Bridge-State enthält zu viele Repräsentationen");
+    currentState_.activeRepresentations.resize(static_cast<std::size_t>(representationCount));
+    for (auto& representation : currentState_.activeRepresentations) {
+        readPod(input, representation.id);
+        readPod(input, representation.activation);
+        readPod(input, representation.familiarity);
+        readPod(input, representation.ageMs);
+    }
+    std::uint64_t recallCount = 0;
+    readPod(input, recallCount);
+    if (recallCount > 100000U) throw std::runtime_error("Bridge-State enthält zu viele Recallkanäle");
+    currentState_.recalledStates.resize(static_cast<std::size_t>(recallCount));
+    for (auto& recall : currentState_.recalledStates) {
+        readPod(input, recall.channel);
+        readPod(input, recall.strength);
+    }
+    readPod(input, currentState_.novelty);
+    readPod(input, currentState_.salience);
+    readPod(input, currentState_.energyNeed);
+    readPod(input, currentState_.activityNeed);
+    readPod(input, currentState_.predictionError);
+    readPod(input, currentState_.confidence);
+    readPod(input, currentState_.functionalFingerprint);
+    if (!input || currentState_.step != nervousSystem_.metrics().step) {
+        throw std::runtime_error("Bridge-State ist beschädigt oder passt nicht zum Nervensystem");
+    }
 }
 
 std::vector<double> cognitiveFeatureVector(const CognitiveState& state) {

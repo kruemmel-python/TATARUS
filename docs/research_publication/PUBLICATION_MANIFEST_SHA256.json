@@ -1,0 +1,25 @@
+{
+  "protocol": "TATARUS-PUBLICATION-1",
+  "entries": [
+    {
+      "path": "TATARUS_PAPER.pdf",
+      "bytes": 647177,
+      "sha256": "2e94a80725e7820dfb39a97d8413f16731f4b8749751d7bf4c7888215a4436b6"
+    },
+    {
+      "path": "TATARUS_SUPPLEMENT.pdf",
+      "bytes": 271389,
+      "sha256": "65d7a3a9b671aeec356f7dc6f7a7f92cab3e2177bca6a2e53b0c1da2d0c2a356"
+    },
+    {
+      "path": "TATARUS_PAPER_DE.md",
+      "bytes": 62999,
+      "sha256": "f8a1e29bbd65504bfbc4bf774c1591466aaa0830fe798f2685b4c7f3c16dc219"
+    },
+    {
+      "path": "TATARUS_SUPPLEMENT_DE.md",
+      "bytes": 38991,
+      "sha256": "b26c4d08d7440e02ce53103e60f74f1e5841bd58cd5d476a6970b90442f29d65"
+    }
+  ]
+}
