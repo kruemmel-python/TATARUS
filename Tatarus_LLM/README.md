@@ -1,3 +1,4 @@
+<img width="1920" height="948" alt="Tatarus_Web_Ui" src="https://github.com/user-attachments/assets/e363b88c-b984-4943-a079-6d2deb317bae" />
 # TATARUS_LLM
 
 ## TATARUS – A Persistent Synthetic Nervous System with a Replaceable LLM Cortex
@@ -211,6 +212,7 @@ $env:GEMINI_API_KEY = "..."
 API-Schlüssel werden nur aus Umgebungsvariablen gelesen und nicht im Snapshot gespeichert.
 
 ## Lokale Web UI: Neural Chat
+<img width="1920" height="948" alt="Tatarus_Web_Ui" src="https://github.com/user-attachments/assets/ebbd20bb-b862-4019-9504-92f73b038a14" />
 
 Die native Anwendung liefert jetzt eine vollständige responsive Chatoberfläche direkt aus dem C++-Gateway aus. Es ist kein Node.js-, Python- oder Cloud-Webserver erforderlich. TATARUS, der Browser und LM Studio bleiben auf demselben Rechner:
 
