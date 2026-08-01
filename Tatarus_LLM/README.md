@@ -1,4 +1,3 @@
-<img width="1920" height="948" alt="Tatarus_Web_Ui" src="https://github.com/user-attachments/assets/e363b88c-b984-4943-a079-6d2deb317bae" />
 # TATARUS_LLM
 
 ## TATARUS – A Persistent Synthetic Nervous System with a Replaceable LLM Cortex
